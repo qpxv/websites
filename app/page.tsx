@@ -1,65 +1,159 @@
-import Image from "next/image";
+'use client'
 
-export default function Home() {
+import { useRouter } from 'next/navigation'
+import LiquidGlass from 'liquid-glass-react'
+import { heroes } from '@/lib/heroes'
+
+export default function Dashboard() {
+  const router = useRouter()
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="min-h-screen bg-[#060608] relative overflow-hidden">
+
+      {/* ── Ambient background orbs ────────────────────────────────────── */}
+      {/* Amber — top-left (business coach) */}
+      <div className="absolute pointer-events-none" style={{
+        width: 700, height: 700, top: '-8%', left: '-8%',
+        background: 'radial-gradient(circle, rgba(245,158,11,0.25) 0%, transparent 65%)',
+        filter: 'blur(6px)',
+      }} />
+      {/* Red — top-right (fitness coach) */}
+      <div className="absolute pointer-events-none" style={{
+        width: 700, height: 700, top: '-8%', right: '-8%',
+        background: 'radial-gradient(circle, rgba(239,68,68,0.22) 0%, transparent 65%)',
+        filter: 'blur(6px)',
+      }} />
+      {/* Purple — bottom-left (mindset coach) */}
+      <div className="absolute pointer-events-none" style={{
+        width: 700, height: 700, bottom: '-8%', left: '-8%',
+        background: 'radial-gradient(circle, rgba(139,92,246,0.22) 0%, transparent 65%)',
+        filter: 'blur(6px)',
+      }} />
+      {/* Teal — bottom-right (life coach) */}
+      <div className="absolute pointer-events-none" style={{
+        width: 700, height: 700, bottom: '-8%', right: '-8%',
+        background: 'radial-gradient(circle, rgba(20,184,166,0.20) 0%, transparent 65%)',
+        filter: 'blur(6px)',
+      }} />
+
+      {/* ── Header ─────────────────────────────────────────────────────── */}
+      <header className="relative z-20 px-8 py-5">
+        <div className="max-w-6xl mx-auto flex items-center justify-between">
+
+          {/* Logo pill — LiquidGlass works great here */}
+          <LiquidGlass cornerRadius={100} padding="8px 18px" blurAmount={0.05} displacementScale={30} elasticity={0.2}>
+            <div className="flex items-center gap-2.5">
+              <svg className="w-3.5 h-3.5 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h10" />
+              </svg>
+              <span className="text-white/80 text-sm font-medium">Hero Section Library</span>
+            </div>
+          </LiquidGlass>
+
+          {/* Count pill */}
+          <LiquidGlass cornerRadius={100} padding="6px 14px" blurAmount={0.04} displacementScale={20}>
+            <span className="text-white/55 text-xs font-mono">{heroes.length} sections</span>
+          </LiquidGlass>
+
+        </div>
+      </header>
+
+      {/* ── Main ───────────────────────────────────────────────────────── */}
+      <main className="relative z-10 max-w-6xl mx-auto px-8 py-14">
+
+        {/* Heading */}
+        <div className="mb-14">
+          <p className="text-xs font-semibold tracking-[0.18em] uppercase text-white/45 mb-4">
+            Coaching Website Designs
+          </p>
+          <h1 className="text-5xl md:text-6xl font-bold leading-[1.06] text-white mb-5">
+            Pick a hero.
+            <br />
+            <span className="text-white/30">Start building.</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-white/65 text-base max-w-md leading-relaxed">
+            A growing collection of premium hero sections designed for coaches.
+            Click any card to preview the full section.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* ── Cards grid ─────────────────────────────────────────────── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {heroes.map((hero, index) => (
+            <button
+              key={hero.slug}
+              onClick={() => router.push(`/heroes/${hero.slug}`)}
+              className="group text-left w-full rounded-2xl overflow-hidden cursor-pointer transition-all duration-300"
+              style={{
+                background: 'rgba(255,255,255,0.04)',
+                backdropFilter: 'blur(28px) saturate(180%)',
+                WebkitBackdropFilter: 'blur(28px) saturate(180%)',
+                border: '1px solid rgba(255,255,255,0.09)',
+                boxShadow: '0 0 0 0.5px rgba(255,255,255,0.04), 0 20px 60px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.08)',
+              }}
+            >
+              {/* Top highlight strip — the "glass lens" edge */}
+              <div className="h-px w-full" style={{
+                background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.12) 30%, rgba(255,255,255,0.06) 70%, transparent 100%)',
+              }} />
+
+              <div className="p-7">
+                {/* Top row */}
+                <div className="flex items-center justify-between mb-5">
+                  <span className="text-white/30 text-xs font-mono">0{index + 1}</span>
+                  <span
+                    className="text-[11px] font-semibold px-2.5 py-1 rounded-full border"
+                    style={{
+                      color: hero.tintColor,
+                      background: `${hero.tintColor}1a`,
+                      borderColor: `${hero.tintColor}35`,
+                    }}
+                  >
+                    {hero.category}
+                  </span>
+                </div>
+
+                {/* Title */}
+                <h2 className="text-xl font-bold text-white mb-2.5 group-hover:text-white transition-colors">
+                  {hero.title}
+                </h2>
+
+                {/* Description */}
+                <p className="text-white/65 text-sm leading-relaxed mb-7">
+                  {hero.description}
+                </p>
+
+                {/* Bottom row */}
+                <div className="flex items-center justify-between">
+                  <span
+                    className="text-xs font-medium px-2.5 py-1 rounded-md"
+                    style={{
+                      color: `${hero.tintColor}bb`,
+                      background: `${hero.tintColor}14`,
+                    }}
+                  >
+                    {hero.accentLabel}
+                  </span>
+                  <div className="flex items-center gap-1.5 text-xs text-white/40 group-hover:text-white/65 transition-colors duration-200">
+                    <span>Preview</span>
+                    <svg
+                      className="w-3 h-3 group-hover:translate-x-0.5 transition-transform duration-200"
+                      fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </button>
+          ))}
+        </div>
+
+        {/* Footer */}
+        <div className="mt-16 text-center">
+          <p className="text-white/20 text-xs">More sections coming soon.</p>
         </div>
       </main>
     </div>
-  );
+  )
 }
