@@ -61,7 +61,7 @@ export default function ProcessSection() {
   }, []);
 
   return (
-    <section className="bg-[#0a0a0a] relative overflow-hidden">
+    <section id="process" className="bg-[#0a0a0a] relative overflow-hidden">
 
       {/* Subtle left-edge red glow — different position from Solution's top-center */}
       <div

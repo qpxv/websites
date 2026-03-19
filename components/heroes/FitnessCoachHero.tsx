@@ -21,12 +21,19 @@ export default function FitnessCoachHero() {
             </div>
             <span className="text-white font-bold text-sm tracking-tight">Mike Torres</span>
           </div>
-          <div className="hidden md:flex items-center gap-8 text-sm text-white/35">
-            {['Programs', 'Transformations', 'Nutrition', 'About'].map((item) => (
-              <span key={item} className="hover:text-white/65 cursor-pointer transition-colors">{item}</span>
+          <div className="hidden md:flex items-center gap-8 text-sm text-white/30">
+            {[
+              { label: 'The Method', href: '#solution' },
+              { label: 'Process',    href: '#process' },
+              { label: 'Results',    href: '#testimonials' },
+              { label: 'Pricing',    href: '#pricing' },
+            ].map(({ label, href }) => (
+              <a key={href} href={href} className="hover:text-white/60 transition-colors duration-200">
+                {label}
+              </a>
             ))}
           </div>
-          <button className="px-5 py-2 border border-white/20 text-white text-sm font-medium hover:bg-white hover:text-black transition-all cursor-pointer">
+          <button className="px-5 py-2 bg-[#dc2626] hover:bg-[#b91c1c] text-white text-sm font-bold transition-colors duration-200 cursor-pointer">
             Book a Session
           </button>
         </nav>
@@ -180,7 +187,7 @@ export default function FitnessCoachHero() {
       {/* ─────────────────────────────────────────────────────────────────
           SOLUTION TEASER — The MT Method
       ───────────────────────────────────────────────────────────────── */}
-      <section className="bg-[#0f0f0f] relative overflow-hidden">
+      <section id="solution" className="bg-[#0f0f0f] relative overflow-hidden">
 
         {/* Red radial ellipse glow — top center */}
         <div
@@ -369,7 +376,7 @@ export default function FitnessCoachHero() {
       {/* ─────────────────────────────────────────────────────────────────
           TESTIMONIALS — Real results, real names
       ───────────────────────────────────────────────────────────────── */}
-      <section className="bg-[#0f0f0f] relative overflow-hidden">
+      <section id="testimonials" className="bg-[#0f0f0f] relative overflow-hidden">
 
         {/* Bottom-right red glow — third unique glow position across the page */}
         <div
@@ -665,6 +672,492 @@ export default function FitnessCoachHero() {
 
         </div>
       </section>
+
+
+      {/* ─────────────────────────────────────────────────────────────────
+          TRANSITION — left-leaning slash, Testimonials → Pricing
+      ───────────────────────────────────────────────────────────────── */}
+      <div className="bg-[#0f0f0f]">
+        <div
+          className="w-full pointer-events-none"
+          style={{
+            height: 80,
+            background: '#0a0a0a',
+            clipPath: 'polygon(0 0, 100% 100%, 0 100%)',
+          }}
+        />
+      </div>
+
+
+      {/* ─────────────────────────────────────────────────────────────────
+          PRICING — transparent, no hidden fees
+      ───────────────────────────────────────────────────────────────── */}
+      <section id="pricing" className="bg-[#0a0a0a] relative overflow-hidden">
+
+        {/* Top-right glow */}
+        <div
+          className="absolute top-0 right-0 pointer-events-none"
+          style={{
+            width: 700,
+            height: 700,
+            background: 'radial-gradient(ellipse at top right, rgba(220,38,38,0.10) 0%, transparent 65%)',
+            filter: 'blur(2px)',
+          }}
+        />
+
+        {/* Ghost watermark */}
+        <div
+          aria-hidden="true"
+          className={`${bebas.className} absolute inset-0 flex items-start justify-center pointer-events-none select-none overflow-hidden`}
+          style={{ paddingTop: '4rem' }}
+        >
+          <span
+            className="text-white uppercase leading-none"
+            style={{ fontSize: 'clamp(100px, 16vw, 220px)', opacity: 0.025, letterSpacing: '0.16em' }}
+          >
+            INVEST
+          </span>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-8 py-24 md:py-32">
+
+          {/* Section label */}
+          <div className="flex items-center gap-4 mb-16 relative z-10">
+            <span className="text-[#dc2626] text-[10px] font-bold tracking-[0.25em] uppercase flex-shrink-0">
+              Investment
+            </span>
+            <div className="flex-1 h-px bg-white/10" />
+          </div>
+
+          {/* Headline */}
+          <div className="mb-16 relative z-10">
+            <h2
+              className={`${bebas.className} text-white leading-[0.9] tracking-wide mb-5`}
+              style={{ fontSize: 'clamp(44px, 5.5vw, 80px)' }}
+            >
+              NO HIDDEN FEES.<br />
+              NO FINE PRINT.<br />
+              <span className="text-[#dc2626]">JUST RESULTS.</span>
+            </h2>
+            <p className="text-white/40 text-sm tracking-[0.15em] uppercase">
+              Pick your format. Commit to the process.
+            </p>
+          </div>
+
+          {/* Pricing cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 relative z-10 mb-10">
+
+            {/* Online */}
+            <div
+              className="p-8 md:p-10"
+              style={{
+                background: 'rgba(255,255,255,0.02)',
+                border: '1px solid rgba(255,255,255,0.07)',
+              }}
+            >
+              <p className="text-white/30 text-[10px] tracking-[0.25em] uppercase mb-6">Online Coaching</p>
+
+              <div className="flex items-end gap-2 mb-2">
+                <span
+                  className={`${bebas.className} text-white leading-none`}
+                  style={{ fontSize: 'clamp(56px, 6vw, 88px)' }}
+                >
+                  $297
+                </span>
+                <span className="text-white/30 text-sm mb-3">/mo</span>
+              </div>
+              <p className="text-white/25 text-xs font-mono tracking-wide mb-8">
+                billed monthly · 3 month minimum
+              </p>
+
+              <div className="w-full h-px bg-white/[0.06] mb-8" />
+
+              <ul className="flex flex-col gap-4 mb-10">
+                {[
+                  'Custom training plan',
+                  'Progressive overload programming',
+                  'Weekly 30-min check-in call',
+                  'Nutrition timing protocol',
+                  '4-week recalibration',
+                  'Direct message access',
+                ].map((feature) => (
+                  <li key={feature} className="flex items-center gap-3">
+                    <div style={{ width: 4, height: 4, background: '#dc2626', flexShrink: 0 }} />
+                    <span className="text-white/55 text-sm">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <button className="w-full py-3.5 border border-white/15 text-white/60 text-sm font-medium hover:border-white/30 hover:text-white/80 transition-all duration-200 cursor-pointer">
+                Apply for Online
+              </button>
+            </div>
+
+            {/* In-Person — featured */}
+            <div
+              className="p-8 md:p-10 relative"
+              style={{
+                background: 'rgba(255,255,255,0.04)',
+                borderTop: '1px solid rgba(255,255,255,0.07)',
+                borderRight: '1px solid rgba(255,255,255,0.07)',
+                borderBottom: '1px solid rgba(255,255,255,0.07)',
+                borderLeft: '2px solid #dc2626',
+              }}
+            >
+              {/* Recommended tag */}
+              <span className="absolute top-6 right-8 text-[#dc2626] text-[10px] font-bold tracking-[0.25em] uppercase">
+                Recommended
+              </span>
+
+              <p className="text-white/30 text-[10px] tracking-[0.25em] uppercase mb-6">In-Person · 1-on-1</p>
+
+              <div className="flex items-end gap-2 mb-2">
+                <span
+                  className={`${bebas.className} text-[#dc2626] leading-none`}
+                  style={{ fontSize: 'clamp(56px, 6vw, 88px)' }}
+                >
+                  $697
+                </span>
+                <span className="text-white/30 text-sm mb-3">/mo</span>
+              </div>
+              <p className="text-white/25 text-xs font-mono tracking-wide mb-8">
+                billed monthly · 3 month minimum
+              </p>
+
+              <div className="w-full h-px bg-white/[0.06] mb-8" />
+
+              <ul className="flex flex-col gap-4 mb-10">
+                {[
+                  'Everything in Online',
+                  '3× weekly sessions (60–75 min)',
+                  'Real-time form correction',
+                  'Priority scheduling',
+                  'Monthly body composition analysis',
+                ].map((feature) => (
+                  <li key={feature} className="flex items-center gap-3">
+                    <div style={{ width: 4, height: 4, background: '#dc2626', flexShrink: 0 }} />
+                    <span className="text-white/70 text-sm">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <button className="w-full py-3.5 bg-[#dc2626] hover:bg-[#b91c1c] text-white text-sm font-bold transition-colors duration-200 cursor-pointer">
+                Apply In-Person
+              </button>
+            </div>
+
+          </div>
+
+          {/* Trust note */}
+          <p className="text-white/20 text-xs text-center tracking-wide relative z-10 mb-20">
+            No long-term contracts after month 3 &nbsp;·&nbsp; Cancel with 30 days notice
+          </p>
+
+          {/* Bridge to CTA */}
+          <div className="border-t border-white/[0.06] pt-10 relative z-10">
+            <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
+              <p
+                className={`${bebas.className} leading-tight tracking-wide`}
+                style={{ fontSize: 'clamp(20px, 2.5vw, 34px)' }}
+              >
+                <span className="text-white/80">LIMITED SPOTS.</span><br />
+                <span className="text-white/30">MIKE CAPS AT 20 ACTIVE CLIENTS.</span>
+              </p>
+              <div className="flex items-center gap-3 text-white/25 text-xs tracking-[0.2em] uppercase pb-1">
+                <span>Apply now</span>
+                <div className="flex items-center gap-1">
+                  <div className="w-5 h-px bg-white/20" />
+                  <div className="w-2 h-px bg-[#dc2626]" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* ─────────────────────────────────────────────────────────────────
+          TRANSITION — right-leaning slash, Pricing → CTA
+      ───────────────────────────────────────────────────────────────── */}
+      <div className="bg-[#0a0a0a]">
+        <div
+          className="w-full pointer-events-none"
+          style={{
+            height: 80,
+            background: '#0f0f0f',
+            clipPath: 'polygon(0 100%, 100% 0, 100% 100%)',
+          }}
+        />
+      </div>
+
+
+      {/* ─────────────────────────────────────────────────────────────────
+          CTA — one action, no options
+      ───────────────────────────────────────────────────────────────── */}
+      <section className="bg-[#0f0f0f] relative overflow-hidden">
+
+        {/* Bottom-left glow — completes the diagonal path across sections */}
+        <div
+          className="absolute bottom-0 left-0 pointer-events-none"
+          style={{
+            width: 700,
+            height: 600,
+            background: 'radial-gradient(ellipse at bottom left, rgba(220,38,38,0.11) 0%, transparent 65%)',
+            filter: 'blur(2px)',
+          }}
+        />
+
+        {/* Ghost watermark */}
+        <div
+          aria-hidden="true"
+          className={`${bebas.className} absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden`}
+        >
+          <span
+            className="text-white uppercase leading-none"
+            style={{ fontSize: 'clamp(120px, 20vw, 280px)', opacity: 0.025, letterSpacing: '0.12em' }}
+          >
+            START
+          </span>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-8 py-24 md:py-40 relative z-10">
+
+          {/* Section label */}
+          <div className="flex items-center gap-4 mb-16">
+            <span className="text-[#dc2626] text-[10px] font-bold tracking-[0.25em] uppercase flex-shrink-0">
+              Apply
+            </span>
+            <div className="flex-1 h-px bg-white/10" />
+          </div>
+
+          {/* Headline — bigger than other h2s, this is the climax */}
+          <h2
+            className={`${bebas.className} text-white leading-[0.88] tracking-wide mb-10`}
+            style={{ fontSize: 'clamp(56px, 9vw, 120px)' }}
+          >
+            CLOSE THE TAB<br />
+            OR<br />
+            <span className="text-[#dc2626]">APPLY.</span>
+          </h2>
+
+          {/* Urgency line */}
+          <p className="text-white/40 text-sm tracking-[0.15em] uppercase mb-14">
+            3 spots remaining this month &nbsp;·&nbsp; Response within 24 hours
+          </p>
+
+          {/* The one button */}
+          <div className="mb-14">
+            <button className="inline-flex items-center gap-3 px-10 py-4 bg-[#dc2626] hover:bg-[#b91c1c] text-white font-bold text-base transition-colors duration-200 cursor-pointer">
+              Apply for Coaching
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+
+          {/* Trust micro-copy */}
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-10">
+            {[
+              "No commitment before the intake call",
+              "30 minutes · no fluff",
+              "If I can't help you, I'll say so",
+            ].map((line) => (
+              <div key={line} className="flex items-center gap-2">
+                <div style={{ width: 3, height: 3, background: 'rgba(220,38,38,0.5)', flexShrink: 0 }} />
+                <span className="text-white/30 text-xs tracking-wide">{line}</span>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* ─────────────────────────────────────────────────────────────────
+          TRANSITION — left-leaning slash, CTA → FAQs
+      ───────────────────────────────────────────────────────────────── */}
+      <div className="bg-[#0f0f0f]">
+        <div
+          className="w-full pointer-events-none"
+          style={{
+            height: 80,
+            background: '#0a0a0a',
+            clipPath: 'polygon(0 0, 100% 100%, 0 100%)',
+          }}
+        />
+      </div>
+
+
+      {/* ─────────────────────────────────────────────────────────────────
+          FAQs — kill the last objections
+      ───────────────────────────────────────────────────────────────── */}
+      <section className="bg-[#0a0a0a] relative overflow-hidden">
+
+        {/* Right-center glow */}
+        <div
+          className="absolute top-1/2 -translate-y-1/2 -right-32 pointer-events-none"
+          style={{
+            width: 600,
+            height: 800,
+            background: 'radial-gradient(ellipse at center, rgba(220,38,38,0.07) 0%, transparent 65%)',
+            filter: 'blur(2px)',
+          }}
+        />
+
+        {/* Ghost watermark */}
+        <div
+          aria-hidden="true"
+          className={`${bebas.className} absolute inset-0 flex items-start justify-center pointer-events-none select-none overflow-hidden`}
+          style={{ paddingTop: '4rem' }}
+        >
+          <span
+            className="text-white uppercase leading-none"
+            style={{ fontSize: 'clamp(100px, 15vw, 200px)', opacity: 0.025, letterSpacing: '0.16em' }}
+          >
+            DOUBT
+          </span>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-8 py-24 md:py-32">
+
+          {/* Section label */}
+          <div className="flex items-center gap-4 mb-16 relative z-10">
+            <span className="text-[#dc2626] text-[10px] font-bold tracking-[0.25em] uppercase flex-shrink-0">
+              FAQs
+            </span>
+            <div className="flex-1 h-px bg-white/10" />
+          </div>
+
+          {/* Headline */}
+          <div className="mb-16 relative z-10">
+            <h2
+              className={`${bebas.className} text-white leading-[0.9] tracking-wide`}
+              style={{ fontSize: 'clamp(44px, 5.5vw, 80px)' }}
+            >
+              EVERY OBJECTION<br />
+              ANSWERED<br />
+              <span className="text-[#dc2626]">HONESTLY.</span>
+            </h2>
+          </div>
+
+          {/* FAQ accordion — native details/summary, no JS needed */}
+          <div className="relative z-10 max-w-3xl">
+            {[
+              {
+                q: 'How quickly will I see results?',
+                a: "Most clients notice a shift in energy and recovery within 2 weeks. Visible body composition changes typically begin around week 4–6. By week 12, the results are significant enough to speak for themselves.",
+              },
+              {
+                q: "I've tried programs before and nothing stuck. What's different?",
+                a: "Generic programs fail because they're built for the average person — not for you. The MT Method starts with your biological baseline: your recovery rate, metabolic response, and training history. There's no template. There's no guessing.",
+              },
+              {
+                q: 'How much time do I need to commit each week?',
+                a: "Online clients: 4–5 hours of training per week. In-person clients: 3 sessions per week, 60–75 minutes each. The nutrition protocol adds no extra time — it works around your existing schedule, not the other way around.",
+              },
+              {
+                q: 'Is online coaching as effective as training in-person?',
+                a: "For most clients, yes — provided they have solid form fundamentals already. Online coaching is how I work with clients in 14 different countries. If you're a complete beginner with no prior training experience, in-person is the better starting point.",
+              },
+              {
+                q: 'What if I travel a lot or have an unpredictable schedule?',
+                a: "Several of my longest-running clients travel 2–3 weeks a month. Your program adapts to whatever equipment you have access to — hotel gym, bodyweight, full commercial gym. The system doesn't break when your routine does.",
+              },
+              {
+                q: 'Is there a money-back guarantee?',
+                a: "No. A guarantee would attract people who aren't committed, and uncommitted clients don't get results. What I offer instead: a 30-minute intake call before you pay a single dollar. If I don't think I can help you, I'll tell you. I've turned people away. I take that seriously.",
+              },
+              {
+                q: "How do I know if I'm ready for this?",
+                a: "If you've been training inconsistently for more than 6 months and don't understand why you're not progressing — you're ready. If you're looking for an easy fix or a short-term program, you're not. The MT Method is for people who want to understand their body and train it properly, for the long term.",
+              },
+            ].map(({ q, a }, i) => (
+              <details key={i} className="group border-b border-white/[0.07]">
+                <summary className="flex items-center justify-between py-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                  <span
+                    className={`${bebas.className} text-white/65 group-open:text-white tracking-wide transition-colors duration-200 pr-6`}
+                    style={{ fontSize: 'clamp(16px, 1.5vw, 22px)' }}
+                  >
+                    {q}
+                  </span>
+                  <span
+                    className="text-[#dc2626] text-xl font-light flex-shrink-0 group-open:rotate-45 transition-transform duration-200 leading-none"
+                  >
+                    +
+                  </span>
+                </summary>
+                <div className="pb-8 pr-10">
+                  <p className="text-white/45 text-sm leading-relaxed">{a}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* ─────────────────────────────────────────────────────────────────
+          FOOTER
+      ───────────────────────────────────────────────────────────────── */}
+      <footer className="bg-[#0a0a0a] border-t border-white/[0.06]">
+        <div className="max-w-7xl mx-auto px-8 pt-16 pb-24">
+
+          {/* Top row — logo + nav */}
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-12 mb-14">
+
+            {/* Logo + tagline */}
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-8 bg-[#dc2626] flex items-center justify-center flex-shrink-0">
+                  <span className="text-white font-black text-xs tracking-tight">MT</span>
+                </div>
+                <span className="text-white font-bold text-sm tracking-tight">Mike Torres</span>
+              </div>
+              <p className="text-white/25 text-sm leading-relaxed max-w-xs">
+                Stop guessing. Start training.<br />
+                Certified strength coach · 8 years · 1,200 clients.
+              </p>
+            </div>
+
+            {/* Nav */}
+            <nav className="flex flex-col gap-3 md:items-end">
+              {['Programs', 'Transformations', 'Nutrition', 'About', 'Book a Session'].map((link) => (
+                <span
+                  key={link}
+                  className="text-white/30 text-sm hover:text-white/60 transition-colors duration-200 cursor-pointer"
+                >
+                  {link}
+                </span>
+              ))}
+            </nav>
+          </div>
+
+          {/* Divider with red center pip */}
+          <div className="flex items-center gap-4 mb-8">
+            <div className="flex-1 h-px bg-white/[0.06]" />
+            <div style={{ width: 4, height: 4, background: '#dc2626' }} />
+            <div className="flex-1 h-px bg-white/[0.06]" />
+          </div>
+
+          {/* Bottom row — copyright + links */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <p className="text-white/20 text-xs tracking-wide">
+              © 2025 Mike Torres Coaching · All rights reserved
+            </p>
+            <div className="flex items-center gap-6">
+              {['Privacy', 'Terms', '@miketorresfit'].map((item) => (
+                <span
+                  key={item}
+                  className="text-white/20 text-xs hover:text-white/40 transition-colors duration-200 cursor-pointer tracking-wide"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </footer>
 
 
       {/* ─────────────────────────────────────────────────────────────────
