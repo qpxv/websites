@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { Bebas_Neue } from 'next/font/google';
+import ProcessSection from '@/components/heroes/fitness/ProcessSection';
 
 const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] });
 
@@ -327,6 +328,27 @@ export default function FitnessCoachHero() {
 
         </div>
       </section>
+
+
+      {/* ─────────────────────────────────────────────────────────────────
+          TRANSITION — reverse diagonal slash, Solution → Process
+      ───────────────────────────────────────────────────────────────── */}
+      <div className="bg-[#0f0f0f]">
+        <div
+          className="w-full pointer-events-none"
+          style={{
+            height: 80,
+            background: '#0a0a0a',
+            clipPath: 'polygon(0 0, 100% 100%, 0 100%)',
+          }}
+        />
+      </div>
+
+
+      {/* ─────────────────────────────────────────────────────────────────
+          PROCESS — The MT Method sequence
+      ───────────────────────────────────────────────────────────────── */}
+      <ProcessSection />
 
 
       {/* ─────────────────────────────────────────────────────────────────
