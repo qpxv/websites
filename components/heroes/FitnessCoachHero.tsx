@@ -352,6 +352,322 @@ export default function FitnessCoachHero() {
 
 
       {/* ─────────────────────────────────────────────────────────────────
+          TRANSITION — right-leaning slash, Process → Testimonials
+      ───────────────────────────────────────────────────────────────── */}
+      <div className="bg-[#0a0a0a]">
+        <div
+          className="w-full pointer-events-none"
+          style={{
+            height: 80,
+            background: '#0f0f0f',
+            clipPath: 'polygon(0 100%, 100% 0, 100% 100%)',
+          }}
+        />
+      </div>
+
+
+      {/* ─────────────────────────────────────────────────────────────────
+          TESTIMONIALS — Real results, real names
+      ───────────────────────────────────────────────────────────────── */}
+      <section className="bg-[#0f0f0f] relative overflow-hidden">
+
+        {/* Bottom-right red glow — third unique glow position across the page */}
+        <div
+          className="absolute bottom-0 right-0 pointer-events-none"
+          style={{
+            width: 700,
+            height: 700,
+            background: 'radial-gradient(ellipse at bottom right, rgba(220,38,38,0.09) 0%, transparent 65%)',
+            filter: 'blur(2px)',
+          }}
+        />
+
+        {/* Ghost watermark — "RESULTS" */}
+        <div
+          aria-hidden="true"
+          className={`${bebas.className} absolute inset-0 flex items-start justify-center pointer-events-none select-none overflow-hidden`}
+          style={{ paddingTop: '4rem' }}
+        >
+          <span
+            className="text-white uppercase leading-none"
+            style={{
+              fontSize: 'clamp(100px, 16vw, 220px)',
+              opacity: 0.025,
+              letterSpacing: '0.16em',
+            }}
+          >
+            RESULTS
+          </span>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-8 py-24 md:py-32">
+
+          {/* Section label */}
+          <div className="flex items-center gap-4 mb-16 relative z-10">
+            <span className="text-[#dc2626] text-[10px] font-bold tracking-[0.25em] uppercase flex-shrink-0">
+              Transformations
+            </span>
+            <div className="flex-1 h-px bg-white/10" />
+          </div>
+
+          {/* Headline */}
+          <div className="mb-16 relative z-10">
+            <h2
+              className={`${bebas.className} text-white leading-[0.9] tracking-wide`}
+              style={{ fontSize: 'clamp(44px, 5.5vw, 80px)' }}
+            >
+              THEY CAME IN<br />
+              SKEPTICAL.<br />
+              <span className="text-[#dc2626]">THEY LEFT WITH RECEIPTS.</span>
+            </h2>
+          </div>
+
+          {/* ── Featured testimonial ──────────────────────────────────── */}
+          <div
+            className="relative z-10 mb-px bg-[rgba(255,255,255,0.02)] hover:bg-[rgba(255,255,255,0.04)] transition-colors duration-200"
+            style={{
+              borderTop: '1px solid rgba(255,255,255,0.07)',
+              borderRight: '1px solid rgba(255,255,255,0.07)',
+              borderBottom: '1px solid rgba(255,255,255,0.07)',
+              borderLeft: '2px solid #dc2626',
+            }}
+          >
+            {/* Decorative ghost quote mark */}
+            <div
+              aria-hidden="true"
+              className={`${bebas.className} absolute top-6 left-8 leading-none pointer-events-none select-none`}
+              style={{
+                fontSize: 'clamp(80px, 10vw, 140px)',
+                color: 'rgba(220,38,38,0.06)',
+                lineHeight: 1,
+              }}
+            >
+              &ldquo;
+            </div>
+
+            <div className="p-10 md:p-14">
+              <div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-12 items-end">
+
+                {/* Quote */}
+                <div>
+                  <p
+                    className="text-white/80 leading-relaxed mb-10 relative z-10"
+                    style={{ fontSize: 'clamp(16px, 1.6vw, 22px)' }}
+                  >
+                    I&apos;ve hired three trainers before Mike. The difference isn&apos;t the
+                    workouts — it&apos;s that he explains <em>why</em> every decision is made.
+                    I stopped guessing and started understanding my own body. That shift
+                    alone is worth every dollar.
+                  </p>
+
+                  {/* Client info row */}
+                  <div className="flex items-center gap-5">
+                    {/* Monogram avatar — new element */}
+                    <div
+                      className="flex-shrink-0 flex items-center justify-center"
+                      style={{
+                        width: 40,
+                        height: 40,
+                        background: 'rgba(220,38,38,0.12)',
+                        border: '1px solid rgba(220,38,38,0.25)',
+                      }}
+                    >
+                      <span className="text-[#dc2626] text-xs font-bold tracking-wider">MD</span>
+                    </div>
+                    <div>
+                      <div className="text-white text-sm font-semibold">Marcus D.</div>
+                      <div className="text-white/35 text-xs tracking-wide mt-0.5">Client since 2023 · Online coaching</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Result stat callout — new element */}
+                <div
+                  className="lg:border-l lg:border-white/[0.07] lg:pl-12 flex flex-col gap-1"
+                >
+                  <div
+                    className={`${bebas.className} text-[#dc2626] leading-none`}
+                    style={{ fontSize: 'clamp(44px, 4.5vw, 68px)' }}
+                  >
+                    −38
+                    <span className="text-[0.45em] tracking-wider"> LBS</span>
+                  </div>
+                  <div className="text-white/35 text-xs tracking-[0.15em] uppercase">14 weeks</div>
+                  <div className="mt-3 flex gap-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-[#dc2626] text-xs">★</span>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          {/* ── Supporting testimonials — gap-px grid ────────────────── */}
+          <div
+            className="grid grid-cols-1 md:grid-cols-3 relative z-10 mb-20"
+            style={{
+              gap: '1px',
+              background: 'rgba(255,255,255,0.06)',
+            }}
+          >
+            {[
+              {
+                initials: 'JR',
+                name: 'Jordan R.',
+                meta: 'In-person · 2022',
+                quote: "Down 22 lbs and my bench went up 45 lbs. I thought those two things couldn't happen at the same time. Apparently they can.",
+                stat: '−22',
+                unit: 'LBS',
+                sub: '10 weeks',
+              },
+              {
+                initials: 'PS',
+                name: 'Priya S.',
+                meta: 'Online coaching · 2024',
+                quote: "I was deeply skeptical about the nutrition timing piece. Then week three happened and I completely stopped being skeptical.",
+                stat: '−19',
+                unit: 'LBS',
+                sub: '8 weeks',
+              },
+              {
+                initials: 'AT',
+                name: 'Alex T.',
+                meta: 'In-person · 2023',
+                quote: "The recalibration calls alone are worth the price. He caught a plateau before I even noticed it.",
+                stat: '+41',
+                unit: 'LBS',
+                sub: 'bench press',
+              },
+              {
+                initials: 'DK',
+                name: 'Daniel K.',
+                meta: 'Online coaching · 2023',
+                quote: "Six months of spinning my wheels on my own. Eight weeks with Mike and I had abs for the first time in my adult life.",
+                stat: '−31',
+                unit: 'LBS',
+                sub: '12 weeks',
+              },
+              {
+                initials: 'SC',
+                name: 'Sofia C.',
+                meta: 'In-person · 2024',
+                quote: "I came in wanting to lose weight. I left understanding how my body actually works. The weight loss was almost secondary.",
+                stat: '−26',
+                unit: 'LBS',
+                sub: '11 weeks',
+              },
+              {
+                initials: 'RM',
+                name: 'Ryan M.',
+                meta: 'Online coaching · 2022',
+                quote: "Every trainer I had before gave me the same generic plan. Mike's plan looked nothing like anything I'd seen. That's when I knew.",
+                stat: '+28',
+                unit: 'LBS',
+                sub: 'total muscle',
+              },
+              {
+                initials: 'TN',
+                name: 'Tara N.',
+                meta: 'In-person · 2024',
+                quote: "I was post-partum and terrified of getting back into training. He rebuilt my baseline from zero without ever making me feel behind.",
+                stat: '−24',
+                unit: 'LBS',
+                sub: '14 weeks',
+              },
+              {
+                initials: 'BW',
+                name: 'Brandon W.',
+                meta: 'Online coaching · 2023',
+                quote: "I travel 3 weeks a month. He built a system that doesn't fall apart when I'm in a hotel gym. First coach who actually solved that problem.",
+                stat: '−17',
+                unit: 'LBS',
+                sub: '9 weeks',
+              },
+              {
+                initials: 'LH',
+                name: 'Lauren H.',
+                meta: 'In-person · 2022',
+                quote: "My previous trainer had me doing the same workout for 7 months. Mike changed my program every 4 weeks and I never stopped progressing.",
+                stat: '−29',
+                unit: 'LBS',
+                sub: '16 weeks',
+              },
+            ].map(({ initials, name, meta, quote, stat, unit, sub }) => (
+              <div key={name} className="group bg-[#0f0f0f] hover:bg-[#161616] transition-colors duration-200 px-8 py-10 flex flex-col gap-6">
+
+                {/* Quote */}
+                <p className="text-white/50 text-sm leading-relaxed flex-1">&ldquo;{quote}&rdquo;</p>
+
+                {/* Divider — split rule, same as Solution pillars */}
+                <div className="flex items-center gap-2">
+                  <div className="w-4 h-px bg-[#dc2626]" />
+                  <div className="flex-1 h-px bg-white/08" />
+                </div>
+
+                {/* Bottom row: avatar + name left, stat right */}
+                <div className="flex items-end justify-between gap-4">
+                  <div className="flex items-center gap-3">
+                    <div
+                      className="flex-shrink-0 flex items-center justify-center"
+                      style={{
+                        width: 32,
+                        height: 32,
+                        background: 'rgba(255,255,255,0.04)',
+                        border: '1px solid rgba(255,255,255,0.09)',
+                      }}
+                    >
+                      <span className="text-white/40 text-[10px] font-bold tracking-wide">{initials}</span>
+                    </div>
+                    <div>
+                      <div className="text-white/75 text-xs font-semibold">{name}</div>
+                      <div className="text-white/25 text-[10px] tracking-wide mt-0.5">{meta}</div>
+                    </div>
+                  </div>
+
+                  {/* Compact stat */}
+                  <div className="text-right flex-shrink-0">
+                    <div
+                      className={`${bebas.className} text-[#dc2626] leading-none`}
+                      style={{ fontSize: 'clamp(22px, 2.2vw, 32px)' }}
+                    >
+                      {stat}
+                      <span className="text-[0.55em] tracking-wide"> {unit}</span>
+                    </div>
+                    <div className="text-white/25 text-[10px] tracking-[0.12em] uppercase mt-0.5">{sub}</div>
+                  </div>
+                </div>
+
+              </div>
+            ))}
+          </div>
+
+          {/* Bridge to Pricing */}
+          <div className="border-t border-white/[0.06] pt-10 relative z-10">
+            <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
+              <p
+                className={`${bebas.className} leading-tight tracking-wide`}
+                style={{ fontSize: 'clamp(20px, 2.5vw, 34px)' }}
+              >
+                <span className="text-white/80">1,200 CLIENTS.</span><br />
+                <span className="text-white/30">ONE CONSISTENT RESULT.</span>
+              </p>
+              <div className="flex items-center gap-3 text-white/25 text-xs tracking-[0.2em] uppercase pb-1">
+                <span>Investment</span>
+                <div className="flex items-center gap-1">
+                  <div className="w-5 h-px bg-white/20" />
+                  <div className="w-2 h-px bg-[#dc2626]" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* ─────────────────────────────────────────────────────────────────
           FIXED FOOTER BAR — always visible at bottom of viewport
       ───────────────────────────────────────────────────────────────── */}
       <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-white/[0.06]"
