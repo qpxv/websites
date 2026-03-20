@@ -1,3 +1,5 @@
+import ProcessTimeline from '@/components/heroes/business/ProcessTimeline';
+
 export default function BusinessCoachHero() {
   return (
     <>
@@ -258,6 +260,47 @@ export default function BusinessCoachHero() {
             </div>
 
           </div>
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────────────────────────────
+          PROCESS VERSION A — Horizontal expanding timeline
+      ───────────────────────────────────────────────────────────────── */}
+      <section className="relative bg-[#050505] pb-32 px-8">
+
+        {/* Glowing amber divider */}
+        <div className="w-full h-px mb-24" style={{
+          background: 'linear-gradient(to right, transparent 0%, rgba(245,158,11,0.15) 25%, rgba(245,158,11,0.35) 50%, rgba(245,158,11,0.15) 75%, transparent 100%)',
+        }} />
+
+        {/* Subtle amber glow — bottom-left */}
+        <div className="absolute bottom-0 left-0 pointer-events-none" style={{
+          width: 700, height: 500,
+          background: 'radial-gradient(ellipse at bottom left, rgba(245,158,11,0.05) 0%, transparent 65%)',
+        }} />
+
+        <div className="max-w-7xl mx-auto relative z-10">
+
+          {/* Header */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/8 border border-amber-500/15 mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                <span className="text-amber-400/80 text-xs font-medium tracking-widest uppercase">The Process</span>
+              </div>
+              <h2 className="text-white font-bold leading-[1.08] tracking-tight" style={{ fontSize: 'clamp(36px, 4.5vw, 64px)' }}>
+                90 days. Four phases.<br />
+                <span className="text-amber-400">One transformation.</span>
+              </h2>
+            </div>
+            <p className="text-white/35 text-sm leading-relaxed max-w-xs md:mb-1 md:text-right">
+              No fluff, no generic advice.<br />
+              Every week has a deliverable and a deadline.
+            </p>
+          </div>
+
+          <ProcessTimeline />
+
         </div>
       </section>
 
