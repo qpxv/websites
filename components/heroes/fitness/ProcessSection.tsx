@@ -9,25 +9,25 @@ const steps = [
   {
     number: '01',
     label: 'Assessment',
-    body: "30-minute intake call. No fluff. I find your biological starting point, your training history, and the exact gaps in your current approach.",
+    body: "30 minutes. I ask the questions no one's ever asked you before. Where you've been, what's failed, what your body is actually doing right now.",
     tag: 'Day 1',
   },
   {
     number: '02',
     label: 'Blueprint',
-    body: "Your MT Method plan built from scratch. Training load, progressive overload schedule, nutrition timing — all specific to your recovery rate and metabolic baseline.",
+    body: "Your plan, built from scratch. Not adapted from a template — pulled directly from what we learned about you in step one. Training load, overload schedule, nutrition timing, all specific to you.",
     tag: 'Days 2–3',
   },
   {
     number: '03',
     label: 'Execution',
-    body: "You train. I watch every metric. Weekly form reviews, load adjustments, and real-time accountability — not a chatbot, not a PDF.",
+    body: "You train. I watch every metric. Weekly check-ins, load adjustments, form reviews — not an app, not a PDF. Me.",
     tag: 'Weeks 1–12',
   },
   {
     number: '04',
     label: 'Recalibrate',
-    body: "Every 4 weeks we re-baseline your biology. Most coaches skip this entirely. It's exactly why their clients plateau at week 8.",
+    body: "Every 4 weeks, we check what's changed and adjust what isn't working. Most coaches skip this step. That's the exact reason their clients plateau at week 8 and fall off.",
     tag: 'Every 4 Weeks',
   },
 ];
@@ -245,8 +245,8 @@ export default function ProcessSection() {
               className={`${bebas.className} leading-tight tracking-wide`}
               style={{ fontSize: 'clamp(20px, 2.5vw, 34px)' }}
             >
-              <span className="text-white/80">THE SYSTEM IS PROVEN.</span><br />
-              <span className="text-white/30">THE RESULTS SPEAK FOR THEMSELVES.</span>
+              <span className="text-white/80">THE ORDER MATTERS.</span><br />
+              <span className="text-white/30">SKIP A STEP AND YOU&apos;VE WASTED THE OTHERS.</span>
             </p>
             <div className="flex items-center gap-3 text-white/25 text-xs tracking-[0.2em] uppercase pb-1">
               <span>Real clients</span>

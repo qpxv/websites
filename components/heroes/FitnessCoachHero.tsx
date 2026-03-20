@@ -11,7 +11,14 @@ export default function FitnessCoachHero() {
       {/* ─────────────────────────────────────────────────────────────────
           HERO
       ───────────────────────────────────────────────────────────────── */}
-      <section className="min-h-screen bg-[#0a0a0a] flex flex-col">
+      <section className="relative overflow-hidden min-h-screen bg-[#0a0a0a] flex flex-col">
+
+        {/* Red radial glow — bottom-left */}
+        <div className="absolute bottom-0 right-0 pointer-events-none" style={{
+          width: 900, height: 600,
+          background: 'radial-gradient(ellipse at bottom right, rgba(220,38,38,0.12) 0%, transparent 65%)',
+          filter: 'blur(2px)',
+        }} />
 
         {/* Nav */}
         <nav className="max-w-7xl mx-auto w-full flex items-center justify-between px-8 py-6">
@@ -59,8 +66,8 @@ export default function FitnessCoachHero() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
               <p className="text-white/65 text-lg leading-relaxed mb-8 max-w-md">
-                I create athletes. Eight years, 1,200 clients, a track record that doesn&apos;t
-                need a sales page. Either you&apos;re ready to commit — or you&apos;re not.
+                Eight years. 1,200 clients. I don&apos;t do a pitch — the results make the case.
+                Either you&apos;re ready to commit, or you&apos;re not.
               </p>
               <div className="flex flex-wrap gap-3">
                 <button className="px-7 py-3.5 bg-[#dc2626] text-white font-bold text-sm hover:bg-[#b91c1c] transition-colors cursor-pointer">
@@ -125,19 +132,19 @@ export default function FitnessCoachHero() {
               {[
                 {
                   n: '01',
-                  text: "You've followed every program you found online. Each one worked for exactly two weeks.",
+                  text: "You've run through every program that looked legit. Committed to each one. Made it about two weeks before nothing moved.",
                 },
                 {
                   n: '02',
-                  text: "You eat well enough. You train hard enough. You still can't explain why nothing's moving.",
+                  text: "You're not eating garbage and you're not skipping sessions. So why the hell isn't anything changing?",
                 },
                 {
                   n: '03',
-                  text: "You've watched more YouTube tutorials than most trainers watch in their entire career.",
+                  text: "You know more about programming theory than half the trainers at your gym. You're still stuck.",
                 },
                 {
                   n: '04',
-                  text: "You're not lazy. You're not weak. You're doing things in the wrong order — and nobody's been honest enough to tell you that.",
+                  text: "You're not lazy. You're not weak. You've just been doing things in the wrong order and no one's been straight with you about it.",
                 },
               ].map(({ n, text }) => (
                 <div key={n} className="flex gap-6 items-start">
@@ -239,7 +246,7 @@ export default function FitnessCoachHero() {
               <span className="text-[#dc2626]">PERMANENT RESULTS.</span>
             </h2>
             <p className="text-white/40 text-sm tracking-[0.15em] uppercase">
-              Not a program. A precision system built around your biology.
+              Not another program. A system that actually starts from where you are.
             </p>
           </div>
 
@@ -255,19 +262,19 @@ export default function FitnessCoachHero() {
               {
                 number: '01',
                 label: 'Biological Baseline',
-                body: "Most programs ignore your starting biology. Before anything else, we identify exactly why your metabolism, recovery, and hormonal environment have been working against you.",
+                body: "Every program out there assumes you're starting from the same place as everyone else. You're not. Before we build anything, we figure out exactly what's been getting in your way.",
                 tag: 'Where you actually are',
               },
               {
                 number: '02',
                 label: 'Progressive Overload Built to You',
-                body: "Not textbook progression. Your recovery rate determines your training load — not the other way around. You stop breaking down and start building up.",
+                body: "Most coaches apply the same overload schedule to everyone. Your recovery isn't the same as the person next to you. Your load adjusts to match your rate — not the other way around.",
                 tag: 'How you actually grow',
               },
               {
                 number: '03',
                 label: 'Nutrition Timed to Training',
-                body: "Generic macros don't exist in the MT Method. Your food timing is mapped to your training windows. Eat the same calories. Get completely different results.",
+                body: "The calories can stay the same. What changes is when you eat them relative to when you train. That one adjustment changes everything downstream.",
                 tag: 'Why the food finally works',
               },
             ].map(({ number, label, body, tag }) => (
@@ -319,7 +326,7 @@ export default function FitnessCoachHero() {
                 style={{ fontSize: 'clamp(20px, 2.5vw, 34px)' }}
               >
                 <span className="text-white/80">THREE PILLARS.</span><br />
-                <span className="text-white/30">ONE PRECISE SEQUENCE.</span>
+                <span className="text-white/30">ONE ORDER. DON&apos;T SKIP STEPS.</span>
               </p>
 
               <div className="flex items-center gap-3 text-white/25 text-xs tracking-[0.2em] uppercase pb-1">
@@ -461,10 +468,10 @@ export default function FitnessCoachHero() {
                     className="text-white/80 leading-relaxed mb-10 relative z-10"
                     style={{ fontSize: 'clamp(16px, 1.6vw, 22px)' }}
                   >
-                    I&apos;ve hired three trainers before Mike. The difference isn&apos;t the
-                    workouts — it&apos;s that he explains <em>why</em> every decision is made.
-                    I stopped guessing and started understanding my own body. That shift
-                    alone is worth every dollar.
+                    Had 3 trainers before Mike. The difference isn&apos;t the workouts — it&apos;s
+                    that he actually explains the why behind every decision he makes. I
+                    stopped second-guessing everything and started actually understanding
+                    what I was doing. That shift alone made it worth it.
                   </p>
 
                   {/* Client info row */}
@@ -524,7 +531,7 @@ export default function FitnessCoachHero() {
                 initials: 'JR',
                 name: 'Jordan R.',
                 meta: 'In-person · 2022',
-                quote: "Down 22 lbs and my bench went up 45 lbs. I thought those two things couldn't happen at the same time. Apparently they can.",
+                quote: "down 22lbs and added 45 to my bench in the same 10 weeks. genuinely didn't think those two things could happen at the same time lol. they can",
                 stat: '−22',
                 unit: 'LBS',
                 sub: '10 weeks',
@@ -533,7 +540,7 @@ export default function FitnessCoachHero() {
                 initials: 'PS',
                 name: 'Priya S.',
                 meta: 'Online coaching · 2024',
-                quote: "I was deeply skeptical about the nutrition timing piece. Then week three happened and I completely stopped being skeptical.",
+                quote: "ngl I was fully skeptical about the nutrition timing thing. then week 3 happened and I literally had nothing to say lmao",
                 stat: '−19',
                 unit: 'LBS',
                 sub: '8 weeks',
@@ -542,7 +549,7 @@ export default function FitnessCoachHero() {
                 initials: 'AT',
                 name: 'Alex T.',
                 meta: 'In-person · 2023',
-                quote: "The recalibration calls alone are worth the price. He caught a plateau before I even noticed it.",
+                quote: "Honestly the recalibration check-ins are worth the price alone. He spotted a plateau before I even knew it was coming.",
                 stat: '+41',
                 unit: 'LBS',
                 sub: 'bench press',
@@ -551,7 +558,7 @@ export default function FitnessCoachHero() {
                 initials: 'DK',
                 name: 'Daniel K.',
                 meta: 'Online coaching · 2023',
-                quote: "Six months of spinning my wheels on my own. Eight weeks with Mike and I had abs for the first time in my adult life.",
+                quote: "spent 6 months doing everything I thought was right and got basically nowhere. 8 weeks with Mike and I had abs for the first time in my actual life",
                 stat: '−31',
                 unit: 'LBS',
                 sub: '12 weeks',
@@ -560,7 +567,7 @@ export default function FitnessCoachHero() {
                 initials: 'SC',
                 name: 'Sofia C.',
                 meta: 'In-person · 2024',
-                quote: "I came in wanting to lose weight. I left understanding how my body actually works. The weight loss was almost secondary.",
+                quote: "came in just wanting to lose a few pounds, thats genuinely all. ended up actually understanding how my body works for the first time. the weight loss happened but thats honestly not even the main thing anymore",
                 stat: '−26',
                 unit: 'LBS',
                 sub: '11 weeks',
@@ -569,7 +576,7 @@ export default function FitnessCoachHero() {
                 initials: 'RM',
                 name: 'Ryan M.',
                 meta: 'Online coaching · 2022',
-                quote: "Every trainer I had before gave me the same generic plan. Mike's plan looked nothing like anything I'd seen. That's when I knew.",
+                quote: "Every trainer I had before this gave me the same cookie-cutter plan with my name slapped on it. Mike's looked nothing like anything I'd ever seen. Knew from day one it was different.",
                 stat: '+28',
                 unit: 'LBS',
                 sub: 'total muscle',
@@ -578,7 +585,7 @@ export default function FitnessCoachHero() {
                 initials: 'TN',
                 name: 'Tara N.',
                 meta: 'In-person · 2024',
-                quote: "I was post-partum and terrified of getting back into training. He rebuilt my baseline from zero without ever making me feel behind.",
+                quote: "I was post-partum and genuinely scared to get back into training. He didn't rush me or compare me to anyone. Just met me where I was and built from there. That meant more than I expected.",
                 stat: '−24',
                 unit: 'LBS',
                 sub: '14 weeks',
@@ -587,7 +594,7 @@ export default function FitnessCoachHero() {
                 initials: 'BW',
                 name: 'Brandon W.',
                 meta: 'Online coaching · 2023',
-                quote: "I travel 3 weeks a month. He built a system that doesn't fall apart when I'm in a hotel gym. First coach who actually solved that problem.",
+                quote: "3 weeks out of every month I'm traveling. every trainer before just said 'do what you can' and left it at that. Mike actually built the whole program around it. hotel gym, airport, wherever — it doesn't fall apart.",
                 stat: '−17',
                 unit: 'LBS',
                 sub: '9 weeks',
@@ -596,7 +603,7 @@ export default function FitnessCoachHero() {
                 initials: 'LH',
                 name: 'Lauren H.',
                 meta: 'In-person · 2022',
-                quote: "My previous trainer had me doing the same workout for 7 months. Mike changed my program every 4 weeks and I never stopped progressing.",
+                quote: "My last trainer literally had me on the same exact program for 7 months and never said a word about it. Mike changes mine every 4 weeks and I have not plateaued once since I started.",
                 stat: '−29',
                 unit: 'LBS',
                 sub: '16 weeks',
@@ -658,7 +665,7 @@ export default function FitnessCoachHero() {
                 style={{ fontSize: 'clamp(20px, 2.5vw, 34px)' }}
               >
                 <span className="text-white/80">1,200 CLIENTS.</span><br />
-                <span className="text-white/30">ONE CONSISTENT RESULT.</span>
+                <span className="text-white/30">SAME RESULT EVERY TIME.</span>
               </p>
               <div className="flex items-center gap-3 text-white/25 text-xs tracking-[0.2em] uppercase pb-1">
                 <span>Investment</span>
@@ -737,7 +744,7 @@ export default function FitnessCoachHero() {
             >
               NO HIDDEN FEES.<br />
               NO FINE PRINT.<br />
-              <span className="text-[#dc2626]">JUST RESULTS.</span>
+              <span className="text-[#dc2626]">THE PRICE IS THE PRICE.</span>
             </h2>
             <p className="text-white/40 text-sm tracking-[0.15em] uppercase">
               Pick your format. Commit to the process.
@@ -779,7 +786,7 @@ export default function FitnessCoachHero() {
                   'Weekly 30-min check-in call',
                   'Nutrition timing protocol',
                   '4-week recalibration',
-                  'Direct message access',
+                  'Direct access to me',
                 ].map((feature) => (
                   <li key={feature} className="flex items-center gap-3">
                     <div style={{ width: 4, height: 4, background: '#dc2626', flexShrink: 0 }} />
@@ -861,7 +868,7 @@ export default function FitnessCoachHero() {
                 style={{ fontSize: 'clamp(20px, 2.5vw, 34px)' }}
               >
                 <span className="text-white/80">LIMITED SPOTS.</span><br />
-                <span className="text-white/30">MIKE CAPS AT 20 ACTIVE CLIENTS.</span>
+                <span className="text-white/30">I DON&apos;T TAKE MORE THAN 20 CLIENTS.</span>
               </p>
               <div className="flex items-center gap-3 text-white/25 text-xs tracking-[0.2em] uppercase pb-1">
                 <span>Apply now</span>
@@ -1044,31 +1051,31 @@ export default function FitnessCoachHero() {
             {[
               {
                 q: 'How quickly will I see results?',
-                a: "Most clients notice a shift in energy and recovery within 2 weeks. Visible body composition changes typically begin around week 4–6. By week 12, the results are significant enough to speak for themselves.",
+                a: "Most people feel a difference in energy and recovery within the first two weeks. Visible changes usually start showing up around week 4–6. By week 12, you're not asking yourself if it's working anymore.",
               },
               {
                 q: "I've tried programs before and nothing stuck. What's different?",
-                a: "Generic programs fail because they're built for the average person — not for you. The MT Method starts with your biological baseline: your recovery rate, metabolic response, and training history. There's no template. There's no guessing.",
+                a: "Generic programs fail because they're built for an average person that doesn't actually exist. I start from your real starting point — your history, your recovery, how your body has been responding. There's no template. The plan is built for you.",
               },
               {
                 q: 'How much time do I need to commit each week?',
-                a: "Online clients: 4–5 hours of training per week. In-person clients: 3 sessions per week, 60–75 minutes each. The nutrition protocol adds no extra time — it works around your existing schedule, not the other way around.",
+                a: "Online: 4–5 hours of training per week. In-person: 3 sessions, 60–75 minutes each. The nutrition side doesn't add time to your week — it just changes when, within your existing routine, you eat.",
               },
               {
                 q: 'Is online coaching as effective as training in-person?',
-                a: "For most clients, yes — provided they have solid form fundamentals already. Online coaching is how I work with clients in 14 different countries. If you're a complete beginner with no prior training experience, in-person is the better starting point.",
+                a: "For most people, yes — if your form is solid and you're honest with yourself about accountability. Online is how I work with clients in 14 countries. If you've genuinely never trained before, in-person is the better place to start.",
               },
               {
                 q: 'What if I travel a lot or have an unpredictable schedule?',
-                a: "Several of my longest-running clients travel 2–3 weeks a month. Your program adapts to whatever equipment you have access to — hotel gym, bodyweight, full commercial gym. The system doesn't break when your routine does.",
+                a: "Some of my longest-running clients are on the road constantly. Your plan adapts to whatever you have access to — hotel gym, bodyweight, full commercial gym. The whole point is it works in the real world, not some ideal version of it.",
               },
               {
                 q: 'Is there a money-back guarantee?',
-                a: "No. A guarantee would attract people who aren't committed, and uncommitted clients don't get results. What I offer instead: a 30-minute intake call before you pay a single dollar. If I don't think I can help you, I'll tell you. I've turned people away. I take that seriously.",
+                a: "No. A refund policy is a magnet for people who aren't actually committed — and those people don't get results anyway. What I offer instead is a free 30-minute intake call before you spend anything. If I don't think I can help you, I'll tell you. I've done it. I'll do it again.",
               },
               {
                 q: "How do I know if I'm ready for this?",
-                a: "If you've been training inconsistently for more than 6 months and don't understand why you're not progressing — you're ready. If you're looking for an easy fix or a short-term program, you're not. The MT Method is for people who want to understand their body and train it properly, for the long term.",
+                a: "If you've been at it for 6+ months and still can't explain why you're not progressing — you're ready. If you want a quick fix or a 6-week transformation, this isn't it. This is for people who want to understand how their body works and build something that lasts.",
               },
             ].map(({ q, a }, i) => (
               <details key={i} className="group border-b border-white/[0.07]">
