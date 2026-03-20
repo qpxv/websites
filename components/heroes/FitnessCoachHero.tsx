@@ -756,7 +756,7 @@ export default function FitnessCoachHero() {
 
             {/* Online */}
             <div
-              className="p-8 md:p-10"
+              className="p-8 md:p-10 flex flex-col"
               style={{
                 background: 'rgba(255,255,255,0.02)',
                 border: '1px solid rgba(255,255,255,0.07)',
@@ -795,14 +795,14 @@ export default function FitnessCoachHero() {
                 ))}
               </ul>
 
-              <button className="w-full py-3.5 border border-white/15 text-white/60 text-sm font-medium hover:border-white/30 hover:text-white/80 transition-all duration-200 cursor-pointer">
+              <button className="mt-auto w-full py-3.5 border border-white/15 text-white/60 text-sm font-medium hover:border-white/30 hover:text-white/80 transition-all duration-200 cursor-pointer">
                 Apply for Online
               </button>
             </div>
 
             {/* In-Person — featured */}
             <div
-              className="p-8 md:p-10 relative"
+              className="p-8 md:p-10 relative flex flex-col"
               style={{
                 background: 'rgba(255,255,255,0.04)',
                 borderTop: '1px solid rgba(255,255,255,0.07)',
@@ -848,7 +848,7 @@ export default function FitnessCoachHero() {
                 ))}
               </ul>
 
-              <button className="w-full py-3.5 bg-[#dc2626] hover:bg-[#b91c1c] text-white text-sm font-bold transition-colors duration-200 cursor-pointer">
+              <button className="mt-auto w-full py-3.5 bg-[#dc2626] hover:bg-[#b91c1c] text-white text-sm font-bold transition-colors duration-200 cursor-pointer">
                 Apply In-Person
               </button>
             </div>
