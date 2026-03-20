@@ -1,7 +1,6 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import LiquidGlass from 'liquid-glass-react'
 import { heroes } from '@/lib/heroes'
 
 export default function Dashboard() {
@@ -40,20 +39,24 @@ export default function Dashboard() {
       <header className="relative z-20 px-8 py-5">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
 
-          {/* Logo pill — LiquidGlass works great here */}
-          <LiquidGlass cornerRadius={100} padding="8px 18px" blurAmount={0.05} displacementScale={30} elasticity={0.2}>
-            <div className="flex items-center gap-2.5">
-              <svg className="w-3.5 h-3.5 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h10" />
-              </svg>
-              <span className="text-white/80 text-sm font-medium">Hero Section Library</span>
-            </div>
-          </LiquidGlass>
+          {/* Logo pill */}
+          <div className="flex items-center gap-2.5 px-4 py-2 rounded-full" style={{
+            background: 'rgba(255,255,255,0.06)',
+            border: '1px solid rgba(255,255,255,0.10)',
+          }}>
+            <svg className="w-3.5 h-3.5 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h10" />
+            </svg>
+            <span className="text-white/80 text-sm font-medium">Hero Section Library</span>
+          </div>
 
           {/* Count pill */}
-          <LiquidGlass cornerRadius={100} padding="6px 14px" blurAmount={0.04} displacementScale={20}>
-            <span className="text-white/55 text-xs font-mono">{heroes.length} sections</span>
-          </LiquidGlass>
+          <div className="px-3.5 py-1.5 rounded-full" style={{
+            background: 'rgba(255,255,255,0.05)',
+            border: '1px solid rgba(255,255,255,0.08)',
+          }}>
+            <span className="text-white/50 text-xs font-mono">{heroes.length} sections</span>
+          </div>
 
         </div>
       </header>
@@ -92,27 +95,40 @@ export default function Dashboard() {
                 boxShadow: '0 0 0 0.5px rgba(255,255,255,0.04), 0 20px 60px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.08)',
               }}
             >
+              {/* Color preview gradient */}
+              <div className="relative w-full overflow-hidden" style={{ height: 110 }}>
+                <div className="absolute inset-0" style={{
+                  background: `linear-gradient(135deg, ${hero.previewColors.from} 0%, ${hero.previewColors.via} 50%, ${hero.previewColors.to} 100%)`,
+                }} />
+                {/* Subtle noise/grain overlay for depth */}
+                <div className="absolute inset-0" style={{
+                  background: 'radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.04) 0%, transparent 60%)',
+                }} />
+                {/* Category badge overlaid on the gradient */}
+                <div className="absolute bottom-3 left-4">
+                  <span
+                    className="text-[11px] font-semibold px-2.5 py-1 rounded-full border backdrop-blur-sm"
+                    style={{
+                      color: hero.tintColor,
+                      background: `${hero.tintColor}22`,
+                      borderColor: `${hero.tintColor}40`,
+                    }}
+                  >
+                    {hero.category}
+                  </span>
+                </div>
+                {/* Index number top-right */}
+                <div className="absolute top-3 right-4">
+                  <span className="text-white/20 text-xs font-mono">0{index + 1}</span>
+                </div>
+              </div>
+
               {/* Top highlight strip — the "glass lens" edge */}
               <div className="h-px w-full" style={{
                 background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.12) 30%, rgba(255,255,255,0.06) 70%, transparent 100%)',
               }} />
 
               <div className="p-7">
-                {/* Top row */}
-                <div className="flex items-center justify-between mb-5">
-                  <span className="text-white/30 text-xs font-mono">0{index + 1}</span>
-                  <span
-                    className="text-[11px] font-semibold px-2.5 py-1 rounded-full border"
-                    style={{
-                      color: hero.tintColor,
-                      background: `${hero.tintColor}1a`,
-                      borderColor: `${hero.tintColor}35`,
-                    }}
-                  >
-                    {hero.category}
-                  </span>
-                </div>
-
                 {/* Title */}
                 <h2 className="text-xl font-bold text-white mb-2.5 group-hover:text-white transition-colors">
                   {hero.title}
