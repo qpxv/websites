@@ -476,17 +476,17 @@ export default function FitnessCoachHero() {
 
                   {/* Client info row */}
                   <div className="flex items-center gap-5">
-                    {/* Monogram avatar — new element */}
+                    {/* Avatar */}
                     <div
-                      className="flex-shrink-0 flex items-center justify-center"
+                      className="flex-shrink-0 overflow-hidden"
                       style={{
                         width: 40,
                         height: 40,
-                        background: 'rgba(220,38,38,0.12)',
                         border: '1px solid rgba(220,38,38,0.25)',
                       }}
                     >
-                      <span className="text-[#dc2626] text-xs font-bold tracking-wider">MD</span>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src="https://randomuser.me/api/portraits/men/83.jpg" alt="Marcus D." style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
                     <div>
                       <div className="text-white text-sm font-semibold">Marcus D.</div>
@@ -528,7 +528,7 @@ export default function FitnessCoachHero() {
           >
             {[
               {
-                initials: 'JR',
+                photo: 'https://randomuser.me/api/portraits/men/32.jpg',
                 name: 'Jordan R.',
                 meta: 'In-person · 2022',
                 quote: "down 22lbs and added 45 to my bench in the same 10 weeks. genuinely didn't think those two things could happen at the same time lol. they can",
@@ -537,7 +537,7 @@ export default function FitnessCoachHero() {
                 sub: '10 weeks',
               },
               {
-                initials: 'PS',
+                photo: 'https://randomuser.me/api/portraits/women/45.jpg',
                 name: 'Priya S.',
                 meta: 'Online coaching · 2024',
                 quote: "ngl I was fully skeptical about the nutrition timing thing. then week 3 happened and I literally had nothing to say lmao",
@@ -546,7 +546,7 @@ export default function FitnessCoachHero() {
                 sub: '8 weeks',
               },
               {
-                initials: 'AT',
+                photo: 'https://randomuser.me/api/portraits/men/52.jpg',
                 name: 'Alex T.',
                 meta: 'In-person · 2023',
                 quote: "Honestly the recalibration check-ins are worth the price alone. He spotted a plateau before I even knew it was coming.",
@@ -555,7 +555,7 @@ export default function FitnessCoachHero() {
                 sub: 'bench press',
               },
               {
-                initials: 'DK',
+                photo: 'https://randomuser.me/api/portraits/men/22.jpg',
                 name: 'Daniel K.',
                 meta: 'Online coaching · 2023',
                 quote: "spent 6 months doing everything I thought was right and got basically nowhere. 8 weeks with Mike and I had abs for the first time in my actual life",
@@ -564,7 +564,7 @@ export default function FitnessCoachHero() {
                 sub: '12 weeks',
               },
               {
-                initials: 'SC',
+                photo: 'https://randomuser.me/api/portraits/women/68.jpg',
                 name: 'Sofia C.',
                 meta: 'In-person · 2024',
                 quote: "came in just wanting to lose a few pounds, thats genuinely all. ended up actually understanding how my body works for the first time. the weight loss happened but thats honestly not even the main thing anymore",
@@ -573,7 +573,7 @@ export default function FitnessCoachHero() {
                 sub: '11 weeks',
               },
               {
-                initials: 'RM',
+                photo: 'https://randomuser.me/api/portraits/men/41.jpg',
                 name: 'Ryan M.',
                 meta: 'Online coaching · 2022',
                 quote: "Every trainer I had before this gave me the same cookie-cutter plan with my name slapped on it. Mike's looked nothing like anything I'd ever seen. Knew from day one it was different.",
@@ -582,7 +582,7 @@ export default function FitnessCoachHero() {
                 sub: 'total muscle',
               },
               {
-                initials: 'TN',
+                photo: 'https://randomuser.me/api/portraits/women/29.jpg',
                 name: 'Tara N.',
                 meta: 'In-person · 2024',
                 quote: "I was post-partum and genuinely scared to get back into training. He didn't rush me or compare me to anyone. Just met me where I was and built from there. That meant more than I expected.",
@@ -591,7 +591,7 @@ export default function FitnessCoachHero() {
                 sub: '14 weeks',
               },
               {
-                initials: 'BW',
+                photo: 'https://randomuser.me/api/portraits/men/55.jpg',
                 name: 'Brandon W.',
                 meta: 'Online coaching · 2023',
                 quote: "3 weeks out of every month I'm traveling. every trainer before just said 'do what you can' and left it at that. Mike actually built the whole program around it. hotel gym, airport, wherever — it doesn't fall apart.",
@@ -600,7 +600,7 @@ export default function FitnessCoachHero() {
                 sub: '9 weeks',
               },
               {
-                initials: 'LH',
+                photo: 'https://randomuser.me/api/portraits/women/17.jpg',
                 name: 'Lauren H.',
                 meta: 'In-person · 2022',
                 quote: "My last trainer literally had me on the same exact program for 7 months and never said a word about it. Mike changes mine every 4 weeks and I have not plateaued once since I started.",
@@ -608,7 +608,7 @@ export default function FitnessCoachHero() {
                 unit: 'LBS',
                 sub: '16 weeks',
               },
-            ].map(({ initials, name, meta, quote, stat, unit, sub }) => (
+            ].map(({ photo, name, meta, quote, stat, unit, sub }) => (
               <div key={name} className="group bg-[#0f0f0f] hover:bg-[#161616] transition-colors duration-200 px-8 py-10 flex flex-col gap-6">
 
                 {/* Quote */}
@@ -624,15 +624,15 @@ export default function FitnessCoachHero() {
                 <div className="flex items-end justify-between gap-4">
                   <div className="flex items-center gap-3">
                     <div
-                      className="flex-shrink-0 flex items-center justify-center"
+                      className="flex-shrink-0 overflow-hidden"
                       style={{
                         width: 32,
                         height: 32,
-                        background: 'rgba(255,255,255,0.04)',
                         border: '1px solid rgba(255,255,255,0.09)',
                       }}
                     >
-                      <span className="text-white/40 text-[10px] font-bold tracking-wide">{initials}</span>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={photo} alt={name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
                     <div>
                       <div className="text-white/75 text-xs font-semibold">{name}</div>
