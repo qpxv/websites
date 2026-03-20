@@ -1,6 +1,10 @@
 export default function BusinessCoachHero() {
   return (
-    <section className="min-h-screen bg-[#050505] flex flex-col relative overflow-hidden">
+    <>
+      {/* ─────────────────────────────────────────────────────────────────
+          HERO
+      ───────────────────────────────────────────────────────────────── */}
+      <section className="min-h-screen bg-[#050505] flex flex-col relative overflow-hidden">
       {/* Background glow */}
       <div
         className="absolute top-[-100px] right-[-100px] w-[700px] h-[700px] rounded-full pointer-events-none"
@@ -131,5 +135,132 @@ export default function BusinessCoachHero() {
         </div>
       </div>
     </section>
+
+      {/* ─────────────────────────────────────────────────────────────────
+          FEATURES — What You Get
+      ───────────────────────────────────────────────────────────────── */}
+      <section className="relative bg-[#050505] pb-32 px-8">
+
+        {/* Amber glowing divider line */}
+        <div className="w-full h-px mb-24" style={{
+          background: 'linear-gradient(to right, transparent 0%, rgba(245,158,11,0.15) 25%, rgba(245,158,11,0.35) 50%, rgba(245,158,11,0.15) 75%, transparent 100%)',
+        }} />
+
+        {/* Soft amber glow — center */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none" style={{
+          width: 900, height: 400,
+          background: 'radial-gradient(ellipse at top, rgba(245,158,11,0.05) 0%, transparent 65%)',
+        }} />
+
+        <div className="max-w-7xl mx-auto relative z-10">
+
+          {/* Header row */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/8 border border-amber-500/15 mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                <span className="text-amber-400/80 text-xs font-medium tracking-widest uppercase">What You Get</span>
+              </div>
+              <h2 className="text-white font-bold leading-[1.08] tracking-tight" style={{ fontSize: 'clamp(36px, 4.5vw, 64px)' }}>
+                Everything you need to<br />
+                <span className="text-amber-400">break through the ceiling.</span>
+              </h2>
+            </div>
+            <p className="text-white/35 text-sm leading-relaxed max-w-xs md:mb-1 md:text-right">
+              Not a course. Not a template library.<br />
+              A hands-on partnership built around your business.
+            </p>
+          </div>
+
+          {/* Bento grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+
+            {/* Large featured card — spans 2 cols */}
+            <div
+              className="lg:col-span-2 rounded-2xl p-8 flex flex-col justify-between min-h-[340px] hover:-translate-y-0.5 transition-transform duration-300"
+              style={{
+                background: 'linear-gradient(135deg, rgba(245,158,11,0.07) 0%, rgba(255,255,255,0.02) 60%)',
+                border: '1px solid rgba(245,158,11,0.18)',
+              }}
+            >
+              <div>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-10 h-10 rounded-full bg-amber-500/15 border border-amber-500/25 flex items-center justify-center">
+                    <span className="text-amber-400 font-bold text-sm">01</span>
+                  </div>
+                  <span className="text-amber-400/50 text-xs font-medium tracking-widest uppercase">Core Program</span>
+                </div>
+                <h3 className="text-white font-bold text-2xl tracking-tight mb-3">Strategy & Offer Architecture</h3>
+                <p className="text-white/40 text-sm leading-relaxed max-w-lg">
+                  We dissect your entire business model — your offers, pricing, positioning, and ideal client — and rebuild it
+                  from the ground up. Every dollar you earn stops being accidental and starts being intentional.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-2 mt-8">
+                {['Offer stack audit', 'Pricing strategy', 'ICP definition', '90-day roadmap', 'Positioning workshop'].map((tag) => (
+                  <span key={tag} className="px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-white/45 text-xs">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Right column — 2 stacked cards */}
+            <div className="flex flex-col gap-4">
+
+              <div
+                className="rounded-2xl bg-white/[0.03] border border-white/[0.08] p-7 flex-1 hover:-translate-y-0.5 transition-transform duration-300"
+              >
+                <div className="w-10 h-10 rounded-full bg-amber-500/10 border border-amber-500/15 flex items-center justify-center mb-5">
+                  <span className="text-amber-400 font-bold text-sm">02</span>
+                </div>
+                <h3 className="text-white font-bold text-lg tracking-tight mb-2">Systems & Delegation</h3>
+                <p className="text-white/35 text-sm leading-relaxed">
+                  Build the operational layer that lets you stop being the bottleneck — and watch revenue climb when you step back.
+                </p>
+              </div>
+
+              <div
+                className="rounded-2xl bg-white/[0.03] border border-white/[0.08] p-7 flex-1 hover:-translate-y-0.5 transition-transform duration-300"
+              >
+                <div className="w-10 h-10 rounded-full bg-amber-500/10 border border-amber-500/15 flex items-center justify-center mb-5">
+                  <span className="text-amber-400 font-bold text-sm">03</span>
+                </div>
+                <h3 className="text-white font-bold text-lg tracking-tight mb-2">Scale & Acquisition</h3>
+                <p className="text-white/35 text-sm leading-relaxed">
+                  Predictable high-ticket client flow through authority content, referral engines, and sales infrastructure that converts.
+                </p>
+              </div>
+
+            </div>
+
+            {/* Bottom full-width outcome strip */}
+            <div className="lg:col-span-3 rounded-2xl bg-white/[0.02] border border-white/[0.06] px-8 py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full bg-amber-400" />
+                <span className="text-white/50 text-sm">Average client outcome across all three pillars</span>
+              </div>
+              <div className="flex items-center gap-10">
+                {[
+                  { value: '+$340k', label: 'avg. revenue added' },
+                  { value: '6 months', label: 'avg. time to result' },
+                  { value: '3.4×', label: 'avg. ROI on investment' },
+                ].map((s, i) => (
+                  <div key={i} className="flex items-center gap-10">
+                    <div>
+                      <div className="text-amber-400 font-bold text-lg leading-none">{s.value}</div>
+                      <div className="text-white/30 text-xs mt-1">{s.label}</div>
+                    </div>
+                    {i < 2 && <div className="w-px h-8 bg-white/[0.07]" />}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </>
   );
 }
