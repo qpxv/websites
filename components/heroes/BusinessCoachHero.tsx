@@ -824,6 +824,309 @@ export default function BusinessCoachHero() {
         </div>
       </section>
 
+      {/* ─────────────────────────────────────────────────────────────────
+          FAQs — The Hard Questions
+      ───────────────────────────────────────────────────────────────── */}
+      <section className="relative bg-[#050505] pb-32 px-8">
+
+        {/* Glowing amber divider */}
+        <div className="w-full h-px mb-24" style={{
+          background: 'linear-gradient(to right, transparent 0%, rgba(245,158,11,0.15) 25%, rgba(245,158,11,0.35) 50%, rgba(245,158,11,0.15) 75%, transparent 100%)',
+        }} />
+
+        {/* Glow — bottom right */}
+        <div className="absolute bottom-0 right-0 pointer-events-none" style={{
+          width: 700, height: 600,
+          background: 'radial-gradient(ellipse at bottom right, rgba(245,158,11,0.05) 0%, transparent 65%)',
+        }} />
+
+        <div className="max-w-7xl mx-auto relative z-10">
+
+          {/* Header */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/8 border border-amber-500/15 mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                <span className="text-amber-400/80 text-xs font-medium tracking-widest uppercase">Before You Decide</span>
+              </div>
+              <h2 className="text-white font-bold leading-[1.08] tracking-tight" style={{ fontSize: 'clamp(36px, 4.5vw, 64px)' }}>
+                Ask the hard stuff.<br />
+                <span className="text-amber-400">Here are the real answers.</span>
+              </h2>
+            </div>
+            <p className="text-white/35 text-sm leading-relaxed max-w-xs md:mb-1 md:text-right">
+              No FAQ has ever been written by someone<br />
+              who wanted you to think clearly. This one is.
+            </p>
+          </div>
+
+          {/* FAQ rows */}
+          <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.07)' }}>
+            {[
+              {
+                q: '"I tried coaching before. It didn\'t do anything for me."',
+                a: 'Most coaching fails because it stays in the room. You leave with insights and no one checks if you act on them. Every engagement here ends with a deliverable, not a debrief. And you have my number between sessions — because the work doesn\'t pause for a week just because our call did.',
+              },
+              {
+                q: '"I can\'t justify $18,000 right now."',
+                a: 'That\'s a completely reasonable thing to feel about an expense. It\'s not a reasonable thing to feel about an investment with a documented 3.4× return. The real question isn\'t whether you can afford this — it\'s whether you can afford another year of the revenue ceiling you\'re already sitting under.',
+              },
+              {
+                q: '"I\'m too busy. I don\'t have time for another commitment."',
+                a: 'Being too busy is usually the symptom, not the constraint. You\'re busy because the business is built around you — which is exactly what we fix. If your schedule can\'t absorb four hours a month, that\'s not a reason to wait. It\'s the reason to start.',
+              },
+              {
+                q: '"Who is this actually NOT right for? Be honest."',
+                a: 'Fair. This isn\'t for people who want someone to hand them a playbook and disappear. It\'s not for founders below $100k who haven\'t validated anything yet — the tools here won\'t land. And it\'s not for people who aren\'t willing to change pricing, positioning, or the way they sell. If any of that describes you, the Accelerator or a course is probably the better call right now.',
+              },
+              {
+                q: '"What if I put in the work and still don\'t get results?"',
+                a: 'I don\'t offer a money-back guarantee and I\'ll tell you why: it creates the wrong relationship. A guarantee lets you opt out when things get uncomfortable — which is usually right before a breakthrough. What I do offer is full transparency before we start. If I don\'t think I can move the needle for your specific business, I\'ll tell you on the strategy call. I\'d rather lose the sale than take someone\'s money and underdeliver.',
+              },
+              {
+                q: '"How do I know if I\'m actually ready for this?"',
+                a: 'You\'re ready if you have a working business (not an idea), if you\'re willing to be told things you don\'t want to hear, and if you can commit fully to 90 days. You\'re not ready if you need the ROI to be guaranteed before you move — certainty is the luxury of people who\'ve already made the leap.',
+              },
+            ].map((faq, i, arr) => (
+              <div
+                key={i}
+                className={`grid grid-cols-1 md:grid-cols-[80px_1fr_1.4fr] gap-0 ${i < arr.length - 1 ? 'border-b border-white/[0.06]' : ''} hover:bg-white/[0.012] transition-colors`}
+              >
+                {/* Number */}
+                <div className="px-6 md:px-8 pt-8 md:py-9 flex md:block">
+                  <span
+                    className="font-bold text-3xl md:text-4xl leading-none select-none"
+                    style={{ color: 'rgba(245,158,11,0.18)', fontVariantNumeric: 'tabular-nums' }}
+                  >
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                </div>
+
+                {/* Question */}
+                <div className="px-6 md:px-0 md:pr-10 pb-2 md:py-9 flex items-start">
+                  <p className="text-white/70 font-semibold text-base leading-snug tracking-tight italic">
+                    {faq.q}
+                  </p>
+                </div>
+
+                {/* Answer */}
+                <div
+                  className="px-6 md:px-8 pb-8 md:py-9 md:border-l"
+                  style={{ borderColor: 'rgba(255,255,255,0.05)' }}
+                >
+                  <p className="text-white/35 text-sm leading-relaxed">
+                    {faq.a}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom nudge */}
+          <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <p className="text-white/25 text-sm">
+              Still have a question that isn't here?
+            </p>
+            <button className="px-6 py-2.5 rounded-full border border-white/10 text-white/40 text-sm hover:border-white/20 hover:text-white/60 transition-all cursor-pointer">
+              Ask before you apply →
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────────────────────────────
+          FINAL CTA — The Closer
+      ───────────────────────────────────────────────────────────────── */}
+      <section className="relative bg-[#050505] pb-32 px-8 overflow-hidden">
+
+        {/* Sunrise glow — builds from centre-bottom */}
+        <div
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none"
+          style={{
+            width: 1100, height: 700,
+            background: 'radial-gradient(ellipse at bottom, rgba(245,158,11,0.13) 0%, rgba(245,158,11,0.04) 35%, transparent 70%)',
+          }}
+        />
+        {/* Secondary deep glow */}
+        <div
+          className="absolute bottom-[-80px] left-1/2 -translate-x-1/2 pointer-events-none"
+          style={{
+            width: 600, height: 400,
+            background: 'radial-gradient(ellipse at bottom, rgba(245,158,11,0.18) 0%, transparent 65%)',
+          }}
+        />
+
+        {/* Amber divider — feeds into the glow below it */}
+        <div className="w-full h-px mb-32" style={{
+          background: 'linear-gradient(to right, transparent 0%, rgba(245,158,11,0.15) 25%, rgba(245,158,11,0.35) 50%, rgba(245,158,11,0.15) 75%, transparent 100%)',
+        }} />
+
+        <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center text-center">
+
+          {/* Spot count — quiet urgency */}
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] mb-12">
+            <span className="w-1.5 h-1.5 rounded-full bg-green-400" style={{ boxShadow: '0 0 6px rgba(74,222,128,0.6)' }} />
+            <span className="text-white/40 text-xs font-medium tracking-widest uppercase">Accepting applications · Q2 2026 · 4 spots remaining</span>
+          </div>
+
+          {/* Headline */}
+          <h2
+            className="text-white font-bold leading-[1.06] tracking-tight mb-8"
+            style={{ fontSize: 'clamp(42px, 6vw, 80px)' }}
+          >
+            The next 90 days<br />
+            <span className="text-amber-400">will pass either way.</span>
+          </h2>
+
+          {/* Direct address copy */}
+          <p className="text-white/40 text-lg leading-relaxed max-w-xl mb-4">
+            You've read the results. You've seen the process. You know what staying stuck costs.
+            The only thing left is the decision — and the strategy call is where that decision gets easy.
+          </p>
+          <p className="text-white/25 text-base leading-relaxed max-w-lg mb-14">
+            It's free. It's 45 minutes. And if it's not the right fit, I'll tell you that too —
+            and point you somewhere that is.
+          </p>
+
+          {/* Primary CTA button */}
+          <button
+            className="group relative px-10 py-4 rounded-full text-black font-bold text-base cursor-pointer transition-all duration-300 hover:scale-[1.03] mb-10"
+            style={{
+              background: 'linear-gradient(135deg, #F59E0B 0%, #D97706 100%)',
+              boxShadow: '0 0 40px rgba(245,158,11,0.3), 0 0 80px rgba(245,158,11,0.1)',
+            }}
+          >
+            Book the strategy call →
+          </button>
+
+          {/* Micro trust signals */}
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 mb-16">
+            {[
+              'Free · no credit card',
+              '45 minutes',
+              'Alex reads every application personally',
+              'Response within 24 hours',
+            ].map((item, i, arr) => (
+              <div key={item} className="flex items-center gap-8">
+                <span className="text-white/25 text-sm">{item}</span>
+                {i < arr.length - 1 && <div className="w-px h-3 bg-white/[0.1]" />}
+              </div>
+            ))}
+          </div>
+
+          {/* Final quote — Alex's voice */}
+          <div className="max-w-lg border-t border-white/[0.07] pt-10">
+            <p className="text-white/20 text-sm leading-relaxed italic">
+              "I built this page to give you everything you need to make a clear decision.
+              If you're still reading, you already know what the right move is.
+              The call is just the first step of doing it."
+            </p>
+            <p className="text-white/20 text-xs mt-4 not-italic tracking-widest uppercase">— Alex Morgan</p>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────────────────────────────
+          FOOTER
+      ───────────────────────────────────────────────────────────────── */}
+      <footer className="relative bg-[#050505] px-8 pt-20 pb-10">
+
+        {/* Top divider */}
+        <div className="w-full h-px mb-16" style={{
+          background: 'linear-gradient(to right, transparent 0%, rgba(245,158,11,0.12) 25%, rgba(245,158,11,0.25) 50%, rgba(245,158,11,0.12) 75%, transparent 100%)',
+        }} />
+
+        <div className="max-w-7xl mx-auto">
+
+          {/* Main footer grid */}
+          <div className="grid grid-cols-1 md:grid-cols-[1.8fr_1fr_1fr] gap-12 mb-16">
+
+            {/* Brand column */}
+            <div>
+              <div className="flex items-center gap-2.5 mb-5">
+                <div className="w-8 h-8 rounded-lg bg-amber-500 flex items-center justify-center flex-shrink-0">
+                  <span className="text-black font-bold text-sm">A</span>
+                </div>
+                <span className="text-white font-semibold text-sm tracking-tight">Alex Morgan</span>
+              </div>
+              <p className="text-white/25 text-sm leading-relaxed max-w-xs mb-7">
+                Business strategy coaching for founders who are done leaving money on the table.
+                Based in New York. Working globally.
+              </p>
+              <button className="px-6 py-2.5 rounded-full border border-amber-500/25 text-amber-400/60 text-sm hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">
+                Book a strategy call →
+              </button>
+            </div>
+
+            {/* Navigation */}
+            <div>
+              <div className="text-white/20 text-[10px] uppercase tracking-widest mb-5">Navigate</div>
+              <ul className="space-y-3">
+                {[
+                  { label: 'About Alex', href: '#' },
+                  { label: 'The Program', href: '#' },
+                  { label: 'Client Results', href: '#' },
+                  { label: 'The Accelerator', href: '#' },
+                  { label: 'Apply Now', href: '#' },
+                ].map((link) => (
+                  <li key={link.label}>
+                    <a href={link.href} className="text-white/30 text-sm hover:text-white/60 transition-colors cursor-pointer">
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Connect */}
+            <div>
+              <div className="text-white/20 text-[10px] uppercase tracking-widest mb-5">Connect</div>
+              <ul className="space-y-3 mb-8">
+                {[
+                  { label: 'LinkedIn', href: '#' },
+                  { label: 'Instagram', href: '#' },
+                  { label: 'Podcast', href: '#' },
+                  { label: 'hello@alexmorgan.co', href: '#' },
+                ].map((link) => (
+                  <li key={link.label}>
+                    <a href={link.href} className="text-white/30 text-sm hover:text-white/60 transition-colors cursor-pointer">
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Availability status */}
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.07]">
+                <span className="w-1.5 h-1.5 rounded-full bg-green-400" style={{ boxShadow: '0 0 5px rgba(74,222,128,0.5)' }} />
+                <span className="text-white/30 text-xs">Taking clients · Q2 2026</span>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Bottom bar */}
+          <div className="border-t border-white/[0.05] pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <p className="text-white/15 text-xs">
+              © 2026 Alex Morgan Coaching LLC. All rights reserved.
+            </p>
+            <div className="flex items-center gap-6">
+              {['Privacy Policy', 'Terms of Service', 'Disclaimer'].map((item, i, arr) => (
+                <div key={item} className="flex items-center gap-6">
+                  <a href="#" className="text-white/15 text-xs hover:text-white/30 transition-colors cursor-pointer">
+                    {item}
+                  </a>
+                  {i < arr.length - 1 && <div className="w-px h-3 bg-white/[0.08]" />}
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </footer>
+
     </>
   );
 }
