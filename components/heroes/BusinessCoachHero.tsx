@@ -304,6 +304,178 @@ export default function BusinessCoachHero() {
         </div>
       </section>
 
+      {/* ─────────────────────────────────────────────────────────────────
+          TESTIMONIALS — The Scoreboard
+      ───────────────────────────────────────────────────────────────── */}
+      <section className="relative bg-[#050505] pb-32 px-8">
+
+        {/* Glowing amber divider */}
+        <div className="w-full h-px mb-24" style={{
+          background: 'linear-gradient(to right, transparent 0%, rgba(245,158,11,0.15) 25%, rgba(245,158,11,0.35) 50%, rgba(245,158,11,0.15) 75%, transparent 100%)',
+        }} />
+
+        {/* Subtle glow — top right */}
+        <div className="absolute top-0 right-0 pointer-events-none" style={{
+          width: 700, height: 500,
+          background: 'radial-gradient(ellipse at top right, rgba(245,158,11,0.05) 0%, transparent 65%)',
+        }} />
+
+        <div className="max-w-7xl mx-auto relative z-10">
+
+          {/* Header */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/8 border border-amber-500/15 mb-6">
+                <span className="w-2 h-2 rounded-full bg-green-400" style={{ boxShadow: '0 0 6px rgba(74,222,128,0.6)' }} />
+                <span className="text-amber-400/80 text-xs font-medium tracking-widest uppercase">Client Results</span>
+              </div>
+              <h2 className="text-white font-bold leading-[1.08] tracking-tight" style={{ fontSize: 'clamp(36px, 4.5vw, 64px)' }}>
+                The numbers<br />
+                <span className="text-amber-400">don't lie.</span>
+              </h2>
+            </div>
+            <p className="text-white/35 text-sm leading-relaxed max-w-xs md:mb-1 md:text-right">
+              Real clients. Real revenue.<br />
+              No fabricated screenshots.
+            </p>
+          </div>
+
+          {/* Top grid: featured case + mini result cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
+
+            {/* Featured case — spans 2 cols */}
+            <div
+              className="lg:col-span-2 rounded-2xl p-8 flex flex-col justify-between min-h-[360px]"
+              style={{
+                background: 'linear-gradient(135deg, rgba(245,158,11,0.07) 0%, rgba(255,255,255,0.02) 60%)',
+                border: '1px solid rgba(245,158,11,0.18)',
+              }}
+            >
+              {/* Client header */}
+              <div className="flex items-start justify-between mb-8">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-black font-bold text-base flex-shrink-0">
+                    S
+                  </div>
+                  <div>
+                    <div className="text-white font-semibold text-sm">Sarah Chen</div>
+                    <div className="text-white/35 text-xs mt-0.5">Founder, Luxe Consulting Group</div>
+                  </div>
+                </div>
+                <div className="flex gap-0.5 flex-shrink-0">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-3.5 h-3.5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+              </div>
+
+              {/* Before / After metric blocks */}
+              <div className="grid grid-cols-2 gap-3 mb-8">
+                <div className="rounded-xl bg-white/[0.03] border border-white/[0.06] px-5 py-4">
+                  <div className="text-white/25 text-[10px] uppercase tracking-widest mb-2">Before</div>
+                  <div className="text-white/45 text-2xl font-bold">$380k</div>
+                  <div className="text-white/20 text-xs mt-1">annual revenue · stuck 2 years</div>
+                </div>
+                <div className="rounded-xl px-5 py-4" style={{
+                  background: 'rgba(245,158,11,0.06)',
+                  border: '1px solid rgba(245,158,11,0.2)',
+                }}>
+                  <div className="text-amber-400/60 text-[10px] uppercase tracking-widest mb-2">After · 7 months</div>
+                  <div className="text-amber-400 text-2xl font-bold">$1.4M</div>
+                  <div className="text-amber-400/35 text-xs mt-1">annual revenue · still scaling</div>
+                </div>
+              </div>
+
+              {/* Quote */}
+              <blockquote className="text-white/45 text-sm leading-relaxed italic border-l-2 border-amber-500/30 pl-4">
+                "I came to Alex thinking I needed more clients. Turns out I needed to stop being the cheapest option in the room.
+                Repriced everything, cut my client count in half, and tripled revenue. I genuinely didn't think that was possible."
+              </blockquote>
+
+              {/* Growth badge */}
+              <div className="flex items-center gap-3 mt-6">
+                <div
+                  className="px-4 py-1.5 rounded-full text-xs font-bold"
+                  style={{ background: 'rgba(245,158,11,0.12)', color: '#F59E0B', border: '1px solid rgba(245,158,11,0.25)' }}
+                >
+                  +268% revenue
+                </div>
+                <span className="text-white/20 text-xs">in 7 months</span>
+              </div>
+            </div>
+
+            {/* Right column: stacked compact result cards */}
+            <div className="flex flex-col gap-4">
+              {[
+                { initial: 'M', name: 'Marcus Webb', biz: 'Executive Coach', result: '+$220k', period: '5 months' },
+                { initial: 'D', name: 'Diana Ross', biz: 'Agency Owner', result: '+410%', period: '9 months' },
+                { initial: 'T', name: 'Tom Nguyen', biz: 'SaaS Founder', result: '$2.1M ARR', period: '12 months' },
+              ].map((c) => (
+                <div
+                  key={c.name}
+                  className="flex-1 rounded-2xl bg-white/[0.03] border border-white/[0.08] px-6 py-5 flex items-center justify-between"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-full bg-amber-500/10 border border-amber-500/15 flex items-center justify-center text-amber-400 font-bold text-sm flex-shrink-0">
+                      {c.initial}
+                    </div>
+                    <div>
+                      <div className="text-white/65 text-sm font-medium">{c.name}</div>
+                      <div className="text-white/25 text-xs mt-0.5">{c.biz}</div>
+                    </div>
+                  </div>
+                  <div className="text-right flex-shrink-0">
+                    <div className="text-amber-400 font-bold text-base">{c.result}</div>
+                    <div className="text-white/25 text-xs mt-0.5">{c.period}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Bloomberg-terminal performance table */}
+          <div className="rounded-2xl bg-white/[0.02] border border-white/[0.06] overflow-hidden">
+
+            {/* Table header */}
+            <div className="grid grid-cols-5 px-6 py-3 border-b border-white/[0.05]">
+              {['CLIENT', 'INDUSTRY', 'STARTING REVENUE', 'RESULT', 'TIMELINE'].map((h) => (
+                <div key={h} className="text-white/20 text-[10px] font-medium tracking-widest">{h}</div>
+              ))}
+            </div>
+
+            {/* Table rows */}
+            {[
+              { name: 'Rachel Kim',    industry: 'Life Coaching',   start: '$95k / yr',  result: '$520k / yr', time: '8 mo',  growth: '+447%' },
+              { name: 'James Okafor', industry: 'Real Estate',     start: '$1.2M',       result: '$3.8M',      time: '11 mo', growth: '+217%' },
+              { name: 'Priya Sharma', industry: 'HR Consulting',   start: '$280k',       result: '$740k',      time: '6 mo',  growth: '+164%' },
+              { name: 'Luke Brennan', industry: 'Fitness Brand',   start: '$60k / yr',  result: '$390k / yr', time: '10 mo', growth: '+550%' },
+            ].map((row, i, arr) => (
+              <div
+                key={row.name}
+                className={`grid grid-cols-5 px-6 py-4 items-center hover:bg-white/[0.015] transition-colors ${i < arr.length - 1 ? 'border-b border-white/[0.04]' : ''}`}
+              >
+                <div className="text-white/60 text-sm font-medium">{row.name}</div>
+                <div className="text-white/30 text-sm">{row.industry}</div>
+                <div className="text-white/30 text-sm">{row.start}</div>
+                <div className="text-white/70 text-sm font-semibold">{row.result}</div>
+                <div className="flex items-center gap-2">
+                  <span className="text-white/30 text-sm">{row.time}</span>
+                  <span
+                    className="px-2 py-0.5 rounded text-[11px] font-bold"
+                    style={{ background: 'rgba(245,158,11,0.1)', color: '#F59E0B' }}
+                  >
+                    {row.growth}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
     </>
   );
 }
