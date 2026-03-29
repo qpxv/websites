@@ -1,7 +1,9 @@
 <!-- BEGIN:nextjs-agent-rules -->
+
 # This is NOT the Next.js you know
 
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
+
 <!-- END:nextjs-agent-rules -->
 
 ---
@@ -70,14 +72,17 @@ lib/
 ## Current build status
 
 ### FitnessCoachHero.tsx — ✅ Complete
+
 Full page done. All 9 sections built. Do not use this as a reference template — each new hero is its own fresh design.
 
 ### BusinessCoachHero.tsx — 🔨 In progress
+
 - Hero: ✅ Done
 - Features (The System): ✅ Done
 - Remaining sections: TBD with Ben
 
 ### Other hero files
+
 - `MindsetCoachHero.tsx` — hero section only
 - `LifeCoachHero.tsx` — hero section only
 
@@ -86,3 +91,12 @@ Full page done. All 9 sections built. Do not use this as a reference template �
 ## Design philosophy
 
 Each hero is a **completely independent design** with its own visual identity, color palette, typography, and layout language. Do NOT borrow patterns from other heroes unless Ben explicitly asks for it.
+
+---
+
+##
+
+The following are websites which look good which you should orient yourself on when designing.
+
+- https://contentsystem.ai
+- https://runads.ai
