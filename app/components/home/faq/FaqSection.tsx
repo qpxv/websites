@@ -86,28 +86,19 @@ export default function FaqSection() {
             return (
               <div
                 key={i}
-                className="group rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer"
+                role="button"
+                tabIndex={0}
+                onClick={() => setOpen(isOpen ? null : i)}
+                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") setOpen(isOpen ? null : i); }}
+                className="rounded-2xl transition-all duration-300 cursor-pointer select-none"
                 style={{
                   background: isOpen ? "rgba(55,98,227,0.04)" : "#fff",
-                  border: isOpen
-                    ? "1px solid rgba(55,98,227,0.25)"
-                    : "1px solid var(--border)",
-                }}
-                onMouseEnter={e => {
-                  if (!isOpen) (e.currentTarget as HTMLDivElement).style.border = "1px solid rgba(55,98,227,0.4)";
-                }}
-                onMouseLeave={e => {
-                  if (!isOpen) (e.currentTarget as HTMLDivElement).style.border = "1px solid var(--border)";
+                  border: isOpen ? "1px solid rgba(55,98,227,0.25)" : "1px solid var(--border)",
                 }}
               >
-                <button
-                  onClick={() => setOpen(isOpen ? null : i)}
-                  className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left cursor-pointer"
-                >
-                  <span
-                    className="text-sm font-semibold leading-snug transition-colors duration-300"
-                    style={{ color: isOpen ? "var(--foreground)" : "var(--foreground)" }}
-                  >
+                {/* Question row */}
+                <div className="flex items-center justify-between gap-4 px-6 py-5">
+                  <span className="text-sm font-semibold leading-snug text-foreground">
                     {faq.q}
                   </span>
                   <span
@@ -122,16 +113,14 @@ export default function FaqSection() {
                       <path d="M5 2v6M2 5h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                     </svg>
                   </span>
-                </button>
+                </div>
 
+                {/* Answer */}
                 <div
                   className="overflow-hidden transition-all duration-500 ease-in-out"
                   style={{ maxHeight: isOpen ? "300px" : "0px", opacity: isOpen ? 1 : 0 }}
                 >
-                  <p
-                    className="px-6 pb-5 text-sm leading-relaxed"
-                    style={{ color: "var(--muted-text)" }}
-                  >
+                  <p className="px-6 pb-5 text-sm leading-relaxed" style={{ color: "var(--muted-text)" }}>
                     {faq.a}
                   </p>
                 </div>

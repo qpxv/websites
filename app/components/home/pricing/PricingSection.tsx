@@ -37,13 +37,20 @@ export default function PricingSection() {
     <section
       id="pricing"
       className="relative z-10 px-6 py-28 overflow-hidden"
-      style={{ backgroundColor: "#fafafa" }}
+      style={{ backgroundColor: "#ffffff" }}
     >
-      {/* Blue radial glow */}
+      {/* Blue radial glow — top centre */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(55,98,227,0.06) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse 70% 50% at 50% 0%, rgba(55,98,227,0.10) 0%, transparent 70%)",
+        }}
+      />
+      {/* Ambient wash — left edge */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: "radial-gradient(ellipse 50% 90% at 0% 50%, rgba(55,98,227,0.07) 0%, transparent 65%)",
         }}
       />
 

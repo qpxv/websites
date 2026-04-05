@@ -6,12 +6,12 @@ export default function SparklineIllustration() {
   const pathRef = useRef<SVGPathElement>(null);
   const [indicator, setIndicator] = useState<{ x: number; y: number } | null>(null);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const updateIndicator = (clientX: number) => {
     if (!containerRef.current || !pathRef.current) return;
 
     const rect = containerRef.current.getBoundingClientRect();
-    // Map mouse X to SVG viewBox coordinates (0 0 160 80)
-    const svgX = ((e.clientX - rect.left) / rect.width) * 160;
+    // Map clientX to SVG viewBox coordinates (0 0 160 80)
+    const svgX = ((clientX - rect.left) / rect.width) * 160;
     const clampedX = Math.max(8, Math.min(152, svgX));
 
     // Binary search along path length to find the point closest to clampedX
@@ -28,12 +28,21 @@ export default function SparklineIllustration() {
     setIndicator({ x: pt.x, y: pt.y });
   };
 
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => updateIndicator(e.clientX);
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    updateIndicator(e.touches[0].clientX);
+  };
+
   return (
     <div
       ref={containerRef}
       className="relative w-full h-24 mb-4 shrink-0 cursor-crosshair"
       onMouseMove={handleMouseMove}
+      onTouchMove={handleTouchMove}
       onMouseLeave={() => setIndicator(null)}
+      onTouchEnd={() => setIndicator(null)}
     >
       <svg viewBox="0 0 160 80" fill="none" className="w-full h-full" aria-hidden="true">
         <defs>
