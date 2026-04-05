@@ -1,3 +1,6 @@
+import Image from "next/image";
+import tylerImg from "@/app/testimonial-pictures-clients/tyler van acker.jpeg";
+
 export default function CtaSection() {
   return (
     <section
@@ -101,20 +104,21 @@ export default function CtaSection() {
           }}
         >
           <div className="flex items-center gap-3 mb-3">
-            <div
-              className="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm font-bold shrink-0"
-              style={{ background: "linear-gradient(135deg, var(--blue) 0%, #6b8ff7 100%)" }}
-            >
-              M
-            </div>
+            <Image
+              src={tylerImg}
+              alt="Tyler V."
+              width={36}
+              height={36}
+              className="w-9 h-9 rounded-full object-cover shrink-0"
+            />
             <div>
-              <p className="text-xs font-semibold text-foreground leading-none">Marcus T.</p>
-              <p className="text-[11px] text-muted-text leading-none mt-0.5">Fitness Coach</p>
+              <p className="text-xs font-semibold text-foreground leading-none">Tyler V.</p>
+              <p className="text-[11px] text-muted-text leading-none mt-0.5">Health Coach</p>
             </div>
             <div className="ml-auto text-amber-400 text-xs">★★★★★</div>
           </div>
           <p className="text-xs text-muted-text leading-relaxed">
-            "My site now reflects what I charge. Enquiries went from 2 a week to 9 — in the first month. Wish I'd done this two years ago."
+            "Before Ben, I had a carrd site that only converted people who already trusted me. Now I have a sales page that converts cold traffic — it paid for itself in 3 days."
           </p>
         </div>
 

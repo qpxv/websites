@@ -1,8 +1,7 @@
 const stats = [
-  { value: "142+", label: "Coaches worked with" },
-  { value: "5.0 ★", label: "Average Google rating" },
-  { value: "↑ 38%", label: "Avg conversion lift" },
-  { value: "< 3 wks", label: "Average delivery" },
+  { value: "9", label: "Clients worked with" },
+  { value: "100%", label: "Client satisfaction" },
+  { value: "< 10 days", label: "Average delivery" },
 ];
 
 export default function ResultsStatsStrip() {
@@ -13,7 +12,6 @@ export default function ResultsStatsStrip() {
         background: "#fff",
         border: "1px solid var(--border)",
         boxShadow: "0 1px 4px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.03)",
-        divideColor: "var(--border)",
       }}
     >
       {stats.map((stat) => (

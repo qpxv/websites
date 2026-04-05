@@ -14,7 +14,7 @@ export default function FloatingBookingBadge() {
         <span className="w-2 h-2 rounded-full bg-green-400" />
       </div>
       <div>
-        <p className="text-foreground font-semibold leading-none mb-0.5">Sarah K. booked a call</p>
+        <p className="text-foreground font-semibold leading-none mb-0.5">Daniel W. booked a call</p>
         <p className="text-muted-text font-normal leading-none">2 min ago</p>
       </div>
     </div>

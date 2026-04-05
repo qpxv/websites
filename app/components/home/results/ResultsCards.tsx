@@ -1,24 +1,31 @@
-const smallCards = [
+import Image, { StaticImageData } from "next/image";
+import darrellImg from "@/app/testimonial-pictures-clients/darrell kawooya.jpeg";
+import tylerImg from "@/app/testimonial-pictures-clients/tyler van acker.jpeg";
+import danielImg from "@/app/testimonial-pictures-clients/daniel wedel.jpeg";
+
+const smallCards: { initial: string; name: string; niche: string; quote: string; result: string; img?: StaticImageData }[] = [
+  {
+    initial: "T",
+    name: "Tyler V.",
+    niche: "Health Coach",
+    quote: "I had a carrd site that barely converted. Ben built me a real sales page — it made back its cost and then some within 3 days.",
+    result: "$2.2k in 3 days",
+    img: tylerImg,
+  },
   {
     initial: "M",
-    name: "Marcus T.",
-    niche: "Fitness Coach",
-    quote: "My site now reflects what I charge. Enquiries went from 2 a week to 9.",
-    result: "+$8,400/mo",
+    name: "Manuela W.",
+    niche: "Wellness Coach",
+    quote: "Ben listens well, brings great ideas, and the site came together incredibly fast. I can't recommend him highly enough.",
+    result: "Delivered in days",
   },
   {
     initial: "D",
-    name: "Diana R.",
-    niche: "Life Coach",
-    quote: "Four discovery calls booked in the first week the site went live.",
-    result: "3× revenue",
-  },
-  {
-    initial: "J",
-    name: "James W.",
-    niche: "Mindset Coach",
-    quote: "Clients tell me they booked because the site felt expensive. That's the point.",
-    result: "9 calls/wk",
+    name: "Daniel W.",
+    niche: "Online Coach",
+    quote: "Finding someone easy to work with who is genuinely creative and willing to solve your problem is rare. Ben is exactly that.",
+    result: "On time, every time",
+    img: danielImg,
   },
 ];
 
@@ -58,20 +65,21 @@ export default function ResultsCards() {
               className="text-lg sm:text-xl font-semibold text-foreground leading-snug mb-6 max-w-2xl"
               style={{ letterSpacing: "-0.2px" }}
             >
-              "Going from 3 to 14 booked calls in 8 weeks was wild. Ben didn't just build a site — he built a sales machine that works while I sleep."
+              "Ben's speed and initiative are next level. Revenue went from $1.8k to $5.5k a month within 45 days of the site going live — I did not expect results that fast."
             </p>
 
             {/* Author */}
             <div className="flex items-center gap-3">
-              <div
-                className="w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-bold shrink-0"
-                style={{ background: "linear-gradient(135deg, #3762e3 0%, #6b8ff7 100%)" }}
-              >
-                S
-              </div>
+              <Image
+                src={darrellImg}
+                alt="Darrell K."
+                width={40}
+                height={40}
+                className="w-10 h-10 rounded-full object-cover shrink-0"
+              />
               <div>
-                <p className="text-sm font-semibold text-foreground leading-none">Sarah K.</p>
-                <p className="text-xs text-muted-text leading-none mt-0.5">Business Coach</p>
+                <p className="text-sm font-semibold text-foreground leading-none">Darrell K.</p>
+                <p className="text-xs text-muted-text leading-none mt-0.5">Online Coach</p>
               </div>
             </div>
           </div>
@@ -86,7 +94,7 @@ export default function ResultsCards() {
                 color: "#16a34a",
               }}
             >
-              ↑ 367% booked calls
+              $1.8k → $5.5k/mo
             </span>
           </div>
         </div>
@@ -106,12 +114,22 @@ export default function ResultsCards() {
         >
           {/* Author row */}
           <div className="flex items-center gap-3 mb-4">
-            <div
-              className="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm font-bold shrink-0"
-              style={{ background: "linear-gradient(135deg, #3762e3 0%, #6b8ff7 100%)" }}
-            >
-              {card.initial}
-            </div>
+            {card.img ? (
+              <Image
+                src={card.img}
+                alt={card.name}
+                width={36}
+                height={36}
+                className="w-9 h-9 rounded-full object-cover shrink-0"
+              />
+            ) : (
+              <div
+                className="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm font-bold shrink-0"
+                style={{ background: "linear-gradient(135deg, #3762e3 0%, #6b8ff7 100%)" }}
+              >
+                {card.initial}
+              </div>
+            )}
             <div>
               <p className="text-sm font-semibold text-foreground leading-none">{card.name}</p>
               <p className="text-xs text-muted-text leading-none mt-0.5">{card.niche}</p>

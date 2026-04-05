@@ -1,3 +1,6 @@
+import Image from "next/image";
+import danielImg from "@/app/testimonial-pictures-clients/daniel wedel.jpeg";
+
 export default function HeroSocialProof() {
   return (
     <div
@@ -9,12 +12,13 @@ export default function HeroSocialProof() {
       }}
     >
       {/* Avatar */}
-      <div
-        className="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm font-bold shrink-0"
-        style={{ background: "linear-gradient(135deg, var(--blue) 0%, #6b8ff7 100%)" }}
-      >
-        S
-      </div>
+      <Image
+        src={danielImg}
+        alt="Daniel W."
+        width={36}
+        height={36}
+        className="w-9 h-9 rounded-full object-cover shrink-0"
+      />
 
       {/* Content */}
       <div className="flex flex-col gap-1">
@@ -22,9 +26,9 @@ export default function HeroSocialProof() {
           ★★★★★
         </div>
         <p className="text-xs text-foreground font-medium leading-snug">
-          "Went from 2 to 11 booked calls in my first month."
+          "Genuinely amazed at how fast he delivered. Would absolutely recommend."
         </p>
-        <span className="text-[11px] text-muted-text">Sarah K. · Business Coach</span>
+        <span className="text-[11px] text-muted-text">Daniel W. · Online Coach</span>
       </div>
     </div>
   );
