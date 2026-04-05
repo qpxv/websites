@@ -2,16 +2,30 @@ export default function Page() {
   return (
     <div
       className="min-h-screen relative overflow-hidden"
-      style={{
-        backgroundColor: "#fafafa",
-        backgroundImage: `
-          radial-gradient(ellipse 90% 70% at -5% -5%, rgba(55, 98, 227, 0.12) 0%, transparent 65%),
-          linear-gradient(rgba(180, 185, 210, 0.25) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(180, 185, 210, 0.25) 1px, transparent 1px)
-        `,
-        backgroundSize: "auto, 44px 44px, 44px 44px",
-      }}
+      style={{ backgroundColor: "#fafafa" }}
     >
+      {/* Grid layer — masked out in the center, visible at edges */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(180, 185, 210, 0.35) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(180, 185, 210, 0.35) 1px, transparent 1px)
+          `,
+          backgroundSize: "44px 44px",
+          maskImage: "radial-gradient(ellipse 75% 75% at 50% 50%, transparent 30%, black 80%)",
+          WebkitMaskImage: "radial-gradient(ellipse 75% 75% at 50% 50%, transparent 30%, black 80%)",
+        }}
+      />
+
+      {/* Blue radial glow — top left */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: "radial-gradient(ellipse 80% 65% at -5% -5%, rgba(55, 98, 227, 0.13) 0%, transparent 65%)",
+        }}
+      />
+
       {/* ── Floating Navbar ──────────────────────────────────────── */}
       <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-5xl">
         <div
@@ -61,7 +75,7 @@ export default function Page() {
       </nav>
 
       {/* ── Hero Section ─────────────────────────────────────────── */}
-      <section className="min-h-screen flex items-center px-6 pt-24 pb-16">
+      <section className="relative z-10 min-h-screen flex items-center px-6 pt-24 pb-16">
         <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* Left — copy + CTAs */}
