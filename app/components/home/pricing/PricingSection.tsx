@@ -2,7 +2,7 @@ const tiers = [
   {
     name: "Landing Page",
     price: "$750",
-    description: "One focused page built to convert. Perfect if you have a single offer and need it sold properly.",
+    description: "One focused page that does one thing really well — converts. Great if you have a single offer and want to start getting enquiries fast.",
     deliveryTime: "Under 7 days",
     features: [
       "Full copy written for you",
@@ -17,7 +17,7 @@ const tiers = [
   {
     name: "Full Website",
     price: "$1,200",
-    description: "The complete sales machine. Every section, every objection handled, built to convert high-ticket clients.",
+    description: "The full package — every section a coach needs to turn cold visitors into booked calls, with every objection handled before it even forms.",
     deliveryTime: "Under 10 days",
     features: [
       "Everything in Landing Page",
@@ -62,13 +62,13 @@ export default function PricingSection() {
             className="text-xs font-semibold tracking-widest uppercase mb-4"
             style={{ color: "var(--blue)" }}
           >
-            Pricing
+            Investment
           </span>
           <h2
             className="text-3xl sm:text-4xl xl:text-5xl font-bold leading-[1.15] tracking-tight mb-4 max-w-2xl"
             style={{ color: "var(--foreground)" }}
           >
-            Simple pricing.{" "}
+            Clear pricing.{" "}
             <span
               style={{
                 background: "linear-gradient(135deg, var(--blue) 0%, #6b8ff7 100%)",
@@ -78,11 +78,11 @@ export default function PricingSection() {
                 color: "transparent",
               }}
             >
-              No surprises.
+              Nothing hidden.
             </span>
           </h2>
           <p className="text-base text-muted-text leading-relaxed max-w-md">
-            One price covers everything — copy, design, revisions, and launch support. Nothing is extra.
+            Copy, design, revisions, and launch support — all included. No scope creep, no surprise invoices. What you see is what you pay.
           </p>
         </div>
 

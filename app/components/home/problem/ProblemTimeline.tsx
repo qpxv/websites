@@ -5,9 +5,9 @@ import ProblemCard from "./ProblemCard";
 
 const problems = [
   {
-    title: "Nobody knows who you're for",
+    title: "Visitors leave not knowing if you're their person",
     description:
-      "Generic websites speak to everyone and resonate with no one. If a visitor can't see themselves in your offer within 5 seconds, they leave — and they don't come back.",
+      "If someone lands on your site and can't see themselves in your offer within 5 seconds, they bounce. Not because your coaching isn't right for them — because your website didn't tell them it was.",
     ghostNumber: "01",
     cardBackground: "radial-gradient(ellipse at 95% 50%, rgba(55,98,227,0.05) 0%, transparent 55%), #fff",
     illustration: (
@@ -27,9 +27,9 @@ const problems = [
     ),
   },
   {
-    title: "Traffic comes. Clients don't.",
+    title: "People visit. Nobody books.",
     description:
-      "You're getting eyes on your site but no bookings. Weak copy, no trust signals, a buried CTA. Your website is a digital brochure — not a sales machine.",
+      "You're getting eyes on your site but the calendar stays empty. Unclear copy, missing trust signals, a CTA buried at the bottom. Your website is a brochure — not a booking machine.",
     ghostNumber: "02",
     cardBackground: "linear-gradient(135deg, rgba(239,242,253,0.45) 0%, #fff 50%)",
     illustration: (
@@ -55,9 +55,9 @@ const problems = [
     ),
   },
   {
-    title: "You're doing the wrong work",
+    title: "You're spending hours on the wrong thing",
     description:
-      "Every hour spent tweaking your website is an hour stolen from coaching. Your time has a cost. Right now it's being spent on something you didn't start your business to do.",
+      "Every hour you spend fiddling with your website is an hour you're not coaching — or living. Your time is worth too much for this. Let someone who does this every day take it off your plate.",
     ghostNumber: "03",
     cardBackground: "#fff",
     illustration: (

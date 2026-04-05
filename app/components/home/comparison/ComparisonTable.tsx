@@ -97,7 +97,7 @@ export default function ComparisonTable() {
         }}
       >
         <p className="text-sm font-semibold text-foreground">
-          Ready to skip the agency process?
+          Sound like a better fit?
         </p>
         <a
           href="#work"

@@ -12,7 +12,7 @@ export default function HeroBadge() {
         className="w-1.5 h-1.5 rounded-full animate-pulse"
         style={{ background: "var(--blue)" }}
       />
-      Available for new projects
+      Taking on new coaches now
     </div>
   );
 }

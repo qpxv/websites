@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     q: "You've never coached anyone. How can you write copy that sounds like me?",
-    a: "Fair challenge. The discovery call is where I extract your voice, your story, and the language your clients actually use. After 142+ coaching websites, I know the space cold — the objections, the desires, the words that convert. The copy will sound like the best version of you, not a generic coach.",
+    a: "Fair challenge. The discovery call is where I draw out your voice, your story, and the language your clients actually use. I've worked with coaches across fitness, business, mindset, and life coaching — I know the space, the objections, and the words that actually convert. The copy will sound like the best version of you, not a generic coach.",
   },
   {
     q: "I paid for a website before and it didn't convert. Why would this be different?",

@@ -3,28 +3,28 @@ const steps = [
     number: "01",
     title: "Discovery call",
     description:
-      "30 minutes. You tell me about your offer, your audience, and what's not working. I ask the questions agencies never bother to ask.",
+      "Tell me about your coaching, your clients, and what you wish your website did better. No homework needed — just show up and talk to me.",
     duration: "30 min",
   },
   {
     number: "02",
     title: "Design & build",
     description:
-      "I handle everything — copy, layout, design. You don't write a word unless you want to. I'll check in with questions if I need them.",
+      "I write your copy, design every page, and build the whole thing. Most coaches are surprised by how little they need to do. That's kind of the point.",
     duration: "Days 1–8",
   },
   {
     number: "03",
     title: "Review",
     description:
-      "You see the full site. Revisions are included — no extra invoice, no awkward back-and-forth. We keep going until it's right.",
+      "I'll show you everything. If something feels off, we fix it — no awkward scope conversations, no extra invoices. It's your website and it should feel exactly right.",
     duration: "Day 9",
   },
   {
     number: "04",
     title: "Launch",
     description:
-      "Site goes live. You get the files, the access, and my continued support. The hard work starts paying off from day one.",
+      "Your site goes live. You get the files, the logins, and someone you can actually message when something comes up. The results usually follow pretty quickly.",
     duration: "Day 10",
   },
 ];
@@ -67,13 +67,13 @@ export default function ProcessSection() {
             className="text-xs font-semibold tracking-widest uppercase mb-4"
             style={{ color: "rgba(55,98,227,0.9)" }}
           >
-            The process
+            How it works
           </span>
           <h2
             className="text-3xl sm:text-4xl xl:text-5xl font-bold leading-[1.15] tracking-tight mb-4 max-w-2xl"
             style={{ color: "#fff" }}
           >
-            From first call to live site{" "}
+            Here's exactly what{" "}
             <span
               style={{
                 background: "linear-gradient(135deg, #6b8ff7 0%, #3762e3 100%)",
@@ -82,11 +82,12 @@ export default function ProcessSection() {
                 backgroundClip: "text",
               }}
             >
-              in 10 days.
+              working together
             </span>
+            {" "}looks like.
           </h2>
           <p style={{ color: "rgba(255,255,255,0.45)", fontSize: "1rem", maxWidth: "28rem", lineHeight: 1.7 }}>
-            No project management tools. No status updates. Just a clear path from today to launch.
+            No confusing briefs, no chasing for updates. Just a clear process — and a website you're proud of at the end of it.
           </p>
         </div>
 
@@ -181,7 +182,7 @@ export default function ProcessSection() {
               boxShadow: "0 4px 20px rgba(55,98,227,0.45)",
             }}
           >
-            Start with a free call
+            Let's talk — it's free
             <svg
               width="14"
               height="14"

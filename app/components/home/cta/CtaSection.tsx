@@ -37,12 +37,12 @@ export default function CtaSection() {
           className="text-xs font-semibold tracking-widest uppercase mb-6"
           style={{ color: "var(--blue)" }}
         >
-          Ready?
+          Let's do this
         </span>
 
         {/* Headline */}
         <h2 className="text-4xl sm:text-5xl xl:text-6xl font-bold leading-[1.1] tracking-tight mb-6">
-          <span className="text-foreground">Stop losing clients </span>
+          <span className="text-foreground">Let's get your website </span>
           <span
             style={{
               background: "linear-gradient(135deg, var(--blue) 0%, #6b8ff7 100%)",
@@ -51,13 +51,13 @@ export default function CtaSection() {
               backgroundClip: "text",
             }}
           >
-            to a website that doesn't work.
+            working for you.
           </span>
         </h2>
 
         {/* Subtext */}
         <p className="text-base text-muted-text leading-relaxed mb-10 max-w-md">
-          The call is free. The site takes 10 days. The results speak for themselves.
+          One free call, 10 days to build it, and a site that brings in clients while you sleep.
         </p>
 
         {/* CTA button */}
