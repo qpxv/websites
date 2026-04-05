@@ -1,7 +1,4 @@
 import BrowserWindow from "./BrowserWindow";
-import FloatingBookingBadge from "./FloatingBookingBadge";
-import FloatingMetricBadge from "./FloatingMetricBadge";
-import FloatingTestimonialBadge from "./FloatingTestimonialBadge";
 
 export default function HeroImage() {
   return (
@@ -11,9 +8,6 @@ export default function HeroImage() {
         style={{ background: "radial-gradient(ellipse at 60% 40%, var(--blue) 0%, transparent 70%)" }}
       />
       <BrowserWindow />
-      <FloatingBookingBadge />
-      <FloatingMetricBadge />
-      <FloatingTestimonialBadge />
     </div>
   );
 }

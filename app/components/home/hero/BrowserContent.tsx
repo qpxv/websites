@@ -1,79 +1,82 @@
-const stats = [
-  { label: "Clients", value: "142", trend: "↑" },
-  { label: "Revenue", value: "$84k", trend: "↑" },
-  { label: "Conv. rate", value: "38%", trend: "↑" },
-];
+const avatars = ["S", "M", "J"];
 
 export default function BrowserContent() {
   return (
-    <div className="p-5 space-y-4" style={{ background: "#fafbff" }}>
-      {/* Hero stripe */}
+    <div style={{ background: "#fff" }}>
+
+      {/* Mini nav */}
       <div
-        className="rounded-xl p-5"
+        className="flex items-center justify-between px-4 py-2.5 border-b"
+        style={{ borderColor: "rgba(55, 98, 227, 0.08)" }}
+      >
+        <span className="text-[11px] font-bold" style={{ color: "var(--blue)" }}>Alex Morgan</span>
+        <div className="flex items-center gap-3">
+          <span className="text-[9px]" style={{ color: "var(--muted-text)" }}>About</span>
+          <span className="text-[9px]" style={{ color: "var(--muted-text)" }}>Results</span>
+          <span
+            className="text-[9px] text-white font-semibold px-2 py-1 rounded-md"
+            style={{ background: "var(--blue)" }}
+          >
+            Book a call
+          </span>
+        </div>
+      </div>
+
+      {/* Hero section */}
+      <div
+        className="px-5 pt-6 pb-7"
         style={{ background: "linear-gradient(135deg, #3762e3 0%, #6b8ff7 100%)" }}
       >
-        <div className="w-20 h-2 rounded-full bg-white/30 mb-2" />
-        <div className="w-40 h-4 rounded-full bg-white/70 mb-2" />
-        <div className="w-52 h-3 rounded-full bg-white/40 mb-3" />
-        <div className="w-24 h-7 rounded-lg bg-white/90" />
-      </div>
-
-      {/* Stats row */}
-      <div className="grid grid-cols-3 gap-3">
-        {stats.map((stat) => (
-          <div
-            key={stat.label}
-            className="rounded-xl p-3 flex flex-col"
-            style={{ background: "#fff", border: "1px solid var(--border)" }}
-          >
-            <span className="text-[10px] text-muted-text mb-1">{stat.label}</span>
-            <span className="text-base font-bold" style={{ color: "var(--blue)" }}>
-              <span className="text-[10px] text-green-500 font-semibold mr-0.5">{stat.trend}</span>
-              {stat.value}
-            </span>
-          </div>
-        ))}
-      </div>
-
-      {/* Testimonial card — real text, not skeleton */}
-      <div
-        className="rounded-xl p-4"
-        style={{ background: "#fff", border: "1px solid var(--border)" }}
-      >
-        <div className="flex items-center gap-2 mb-2">
-          <div
-            className="w-7 h-7 rounded-full flex items-center justify-center text-white text-[10px] font-bold shrink-0"
-            style={{ background: "linear-gradient(135deg, var(--blue) 0%, #6b8ff7 100%)" }}
-          >
-            S
-          </div>
-          <div>
-            <p className="text-[10px] font-semibold text-foreground leading-none">Sarah K.</p>
-            <p className="text-[9px] text-muted-text leading-none mt-0.5">Business Coach</p>
-          </div>
-          <div className="ml-auto text-amber-400 text-[10px]">★★★★★</div>
-        </div>
-        <p className="text-[8px] text-muted-text leading-relaxed">
-          "Went from 2 to 11 booked calls in my first month. The website does the selling for me now."
-        </p>
-      </div>
-
-      {/* CTA bar */}
-      <div
-        className="rounded-xl p-4 flex items-center justify-between"
-        style={{ background: "rgba(55,98,227,0.06)", border: "1px solid rgba(55,98,227,0.12)" }}
-      >
-        <div>
-          <div className="w-28 h-2.5 rounded-full mb-1.5" style={{ background: "var(--blue)", opacity: 0.6 }} />
-          <div className="w-20 h-2 rounded-full bg-muted" />
-        </div>
-        <div
-          className="px-3 py-1.5 rounded-lg text-[11px] font-semibold text-white"
-          style={{ background: "linear-gradient(135deg, #3762e3 0%, #6b8ff7 100%)" }}
+        <span className="text-[8px] font-semibold uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.55)" }}>
+          Business Coach &amp; Strategist
+        </span>
+        <h1
+          className="font-bold text-white leading-tight mt-1.5 mb-2.5"
+          style={{ fontSize: "17px", letterSpacing: "-0.3px" }}
         >
-          Book call →
+          Scale Your Coaching<br />to 7 Figures
+        </h1>
+        <p className="leading-relaxed mb-4" style={{ fontSize: "9px", color: "rgba(255,255,255,0.65)" }}>
+          I help ambitious coaches build premium offers and websites that turn visitors into high-ticket clients — without burning out.
+        </p>
+        <div className="flex items-center gap-2">
+          <span
+            className="text-[9px] font-semibold px-3 py-1.5 rounded-lg"
+            style={{ background: "#fff", color: "#3762e3" }}
+          >
+            Book a free call →
+          </span>
+          <span
+            className="text-[9px] px-3 py-1.5 rounded-lg"
+            style={{ color: "rgba(255,255,255,0.75)", border: "1px solid rgba(255,255,255,0.2)" }}
+          >
+            See results
+          </span>
         </div>
       </div>
+
+      {/* Social proof strip */}
+      <div
+        className="flex items-center gap-2.5 px-4 py-3 border-t"
+        style={{ borderColor: "rgba(55, 98, 227, 0.08)" }}
+      >
+        <div className="flex -space-x-1.5 shrink-0">
+          {avatars.map((a) => (
+            <div
+              key={a}
+              className="w-5 h-5 rounded-full flex items-center justify-center text-white text-[7px] font-bold ring-2 ring-white"
+              style={{ background: "linear-gradient(135deg, #3762e3 0%, #6b8ff7 100%)" }}
+            >
+              {a}
+            </div>
+          ))}
+        </div>
+        <p style={{ fontSize: "9px", color: "var(--muted-text)" }}>
+          Trusted by <strong style={{ color: "var(--foreground)" }}>142+ coaches</strong> worldwide
+        </p>
+        <span className="ml-auto text-amber-400" style={{ fontSize: "9px" }}>★★★★★</span>
+      </div>
+
     </div>
   );
 }
