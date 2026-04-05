@@ -6,7 +6,7 @@ export default function HeroSection() {
   return (
     <>
       <Navbar />
-      <section className="relative z-10 min-h-screen flex items-center px-6 pt-24 pb-16">
+      <section className="relative z-10 min-h-screen flex items-center px-6 py-24">
         <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <HeroText />
           <HeroImage />
