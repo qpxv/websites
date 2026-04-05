@@ -86,7 +86,7 @@ export default function FaqSection() {
             return (
               <div
                 key={i}
-                className="group rounded-2xl overflow-hidden transition-all duration-300"
+                className="group rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer"
                 style={{
                   background: isOpen ? "rgba(55,98,227,0.04)" : "#fff",
                   border: isOpen
@@ -94,7 +94,7 @@ export default function FaqSection() {
                     : "1px solid var(--border)",
                 }}
                 onMouseEnter={e => {
-                  if (!isOpen) (e.currentTarget as HTMLDivElement).style.border = "1px solid rgba(55,98,227,0.2)";
+                  if (!isOpen) (e.currentTarget as HTMLDivElement).style.border = "1px solid rgba(55,98,227,0.4)";
                 }}
                 onMouseLeave={e => {
                   if (!isOpen) (e.currentTarget as HTMLDivElement).style.border = "1px solid var(--border)";
@@ -102,7 +102,7 @@ export default function FaqSection() {
               >
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
-                  className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+                  className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left cursor-pointer"
                 >
                   <span
                     className="text-sm font-semibold leading-snug transition-colors duration-300"

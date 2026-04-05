@@ -151,20 +151,12 @@ export default function PricingSection() {
               {/* CTA */}
               <a
                 href="#contact"
-                className="group inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl text-sm font-semibold transition-all duration-200"
-                style={
+                className={`group inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl text-sm font-semibold transition-all duration-200 ${
                   tier.featured
-                    ? {
-                        background: "var(--blue)",
-                        color: "#fff",
-                        boxShadow: "0 4px 20px rgba(55,98,227,0.4)",
-                      }
-                    : {
-                        background: "#fff",
-                        color: "var(--foreground)",
-                        border: "1px solid var(--border)",
-                      }
-                }
+                    ? "text-white bg-[var(--blue)] hover:bg-[var(--blue-hover)]"
+                    : "text-foreground bg-white border border-border hover:border-gray-300 hover:bg-gray-50"
+                }`}
+                style={tier.featured ? { boxShadow: "0 4px 20px rgba(55,98,227,0.4)" } : {}}
               >
                 {tier.cta}
                 <svg
