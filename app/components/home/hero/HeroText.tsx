@@ -5,7 +5,7 @@ import HeroSocialProof from "./HeroSocialProof";
 
 export default function HeroText() {
   return (
-    <div className="flex flex-col items-start">
+    <div className="relative z-10 flex flex-col items-start">
       <HeroBadge />
       <HeroHeading />
       <p className="text-base sm:text-lg text-muted-text leading-relaxed mb-10 max-w-md">
