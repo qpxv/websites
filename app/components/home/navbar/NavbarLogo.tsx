@@ -1,4 +1,4 @@
-export default function NavbarLogo() {
+export default function NavbarLogo({ dark }: { dark?: boolean }) {
   return (
     <div className="flex items-center gap-2">
       <div
@@ -7,7 +7,12 @@ export default function NavbarLogo() {
       >
         B
       </div>
-      <span className="font-semibold text-sm text-foreground">BenWinzer</span>
+      <span
+        className="font-semibold text-sm transition-colors duration-300"
+        style={{ color: dark ? "rgba(255,255,255,0.9)" : "var(--foreground)" }}
+      >
+        BenWinzer
+      </span>
     </div>
   );
 }

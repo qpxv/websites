@@ -26,7 +26,7 @@ export default function HeroCTAButtons() {
 
       <a
         href="#work"
-        className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-sm font-semibold text-foreground border border-border bg-white/70 transition-all duration-200 hover:border-gray-300"
+        className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-sm font-semibold text-foreground border border-border bg-white/70 transition-all duration-200 hover:border-gray-300 hover:bg-gray-50"
       >
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
           <rect x="1" y="1" width="5" height="5" rx="1" stroke="currentColor" strokeWidth="1.5"/>

@@ -7,10 +7,20 @@ import NavbarCTAButton from "./NavbarCTAButton";
 
 export default function Navbar() {
   const [compact, setCompact] = useState(false);
+  const [dark, setDark] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setCompact(window.scrollY > window.innerHeight * 0.2);
+
+      const darkSections = ["process"];
+      const inDark = darkSections.some((id) => {
+        const el = document.getElementById(id);
+        if (!el) return false;
+        const { top, bottom } = el.getBoundingClientRect();
+        return top <= 80 && bottom >= 80;
+      });
+      setDark(inDark);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -22,17 +32,20 @@ export default function Navbar() {
       style={{ width: compact ? "calc(100% - 8rem)" : "calc(100% - 3rem)", maxWidth: compact ? "720px" : "1024px" }}
     >
       <div
-        className="flex items-center justify-between rounded-2xl border border-border transition-all duration-300"
+        className="flex items-center justify-between rounded-2xl transition-all duration-300"
         style={{
           padding: compact ? "8px 16px" : "10px 16px",
-          background: "rgba(255,255,255,0.6)",
+          background: dark ? "rgba(6,8,15,0.75)" : "rgba(255,255,255,0.6)",
           backdropFilter: "blur(28px) saturate(180%)",
           WebkitBackdropFilter: "blur(28px) saturate(180%)",
-          boxShadow: "0 4px 24px rgba(55, 98, 227, 0.07), 0 1px 4px rgba(0,0,0,0.06)",
+          border: `1px solid ${dark ? "rgba(55,98,227,0.2)" : "var(--border)"}`,
+          boxShadow: dark
+            ? "0 4px 24px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2)"
+            : "0 4px 24px rgba(55, 98, 227, 0.07), 0 1px 4px rgba(0,0,0,0.06)",
         }}
       >
-        <NavbarLogo />
-        <NavbarLinks />
+        <NavbarLogo dark={dark} />
+        <NavbarLinks dark={dark} />
         <NavbarCTAButton />
       </div>
     </nav>
