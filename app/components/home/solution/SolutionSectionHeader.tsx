@@ -8,7 +8,7 @@ export default function SolutionSectionHeader() {
         The solution
       </span>
       <h2 className="text-3xl sm:text-4xl xl:text-5xl font-bold text-foreground leading-[1.15] tracking-tight max-w-2xl mb-6">
-        A website built to{" "}
+        A website{" "}
         <span
           style={{
             background: "linear-gradient(135deg, var(--blue) 0%, #6b8ff7 100%)",
@@ -17,7 +17,7 @@ export default function SolutionSectionHeader() {
             backgroundClip: "text",
           }}
         >
-          sell
+          built to sell
         </span>
         , not just sit there
       </h2>
