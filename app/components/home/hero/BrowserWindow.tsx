@@ -7,8 +7,9 @@ export default function BrowserWindow() {
       className="relative w-full max-w-[520px] rounded-2xl overflow-hidden"
       style={{
         border: "1px solid rgba(55, 98, 227, 0.15)",
-        boxShadow: "0 24px 64px rgba(55, 98, 227, 0.12), 0 4px 16px rgba(0,0,0,0.08)",
+        boxShadow: "0 32px 80px rgba(55,98,227,0.18), 0 8px 24px rgba(0,0,0,0.10)",
         background: "#fff",
+        transform: "perspective(1200px) rotateY(-8deg) rotateX(3deg)",
       }}
     >
       <BrowserChrome />
