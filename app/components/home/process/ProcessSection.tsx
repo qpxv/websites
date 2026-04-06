@@ -188,7 +188,7 @@ export default function ProcessSection() {
               height="14"
               viewBox="0 0 14 14"
               fill="none"
-              className="transition-transform duration-200 group-hover:translate-x-1"
+              className="btn-arrow"
             >
               <path
                 d="M2 7h10M8 3l4 4-4 4"

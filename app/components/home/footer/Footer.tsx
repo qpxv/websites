@@ -1,6 +1,7 @@
 import LegalModals from "./LegalModals";
 
 const navLinks = [
+  { label: "Work", href: "#work" },
   { label: "Results", href: "#results" },
   { label: "How it works", href: "#process" },
   { label: "Pricing", href: "#pricing" },

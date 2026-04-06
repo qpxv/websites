@@ -100,17 +100,17 @@ export default function ComparisonTable() {
           Sound like a better fit?
         </p>
         <a
-          href="#work"
+          href="#contact"
           className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-sm font-semibold text-white bg-[var(--blue)] hover:bg-[var(--blue-hover)] transition-all duration-200 shrink-0"
           style={{ boxShadow: "0 4px 20px rgba(55, 98, 227, 0.4)" }}
         >
-          See the work
+          Book a free call
           <svg
             width="14"
             height="14"
             viewBox="0 0 14 14"
             fill="none"
-            className="transition-transform duration-200 group-hover:translate-x-1"
+            className="btn-arrow"
           >
             <path
               d="M2 7h10M8 3l4 4-4 4"

@@ -2,6 +2,7 @@ import HeroSection from "./components/home/HeroSection";
 import ProblemSection from "./components/home/problem/ProblemSection";
 import SolutionSection from "./components/home/solution/SolutionSection";
 import ResultsSection from "./components/home/results/ResultsSection";
+import WorkSection from "./components/home/work/WorkSection";
 import ComparisonSection from "./components/home/comparison/ComparisonSection";
 import ProcessSection from "./components/home/process/ProcessSection";
 import PricingSection from "./components/home/pricing/PricingSection";
@@ -16,6 +17,7 @@ export default function Page() {
       <ProblemSection />
       <SolutionSection />
       <ResultsSection />
+      <WorkSection />
       <ComparisonSection />
       <ProcessSection />
       <PricingSection />

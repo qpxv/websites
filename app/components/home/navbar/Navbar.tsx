@@ -36,8 +36,8 @@ export default function Navbar() {
         style={{
           padding: compact ? "8px 16px" : "10px 16px",
           background: dark ? "rgba(6,8,15,0.75)" : "rgba(255,255,255,0.6)",
-          backdropFilter: "blur(28px) saturate(180%)",
-          WebkitBackdropFilter: "blur(28px) saturate(180%)",
+          backdropFilter: "blur(10px) saturate(140%)",
+          WebkitBackdropFilter: "blur(10px) saturate(140%)",
           border: `1px solid ${dark ? "rgba(55,98,227,0.2)" : "var(--border)"}`,
           boxShadow: dark
             ? "0 4px 24px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2)"

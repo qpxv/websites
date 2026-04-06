@@ -79,7 +79,7 @@ export default function ResultsCards() {
               />
               <div>
                 <p className="text-sm font-semibold text-foreground leading-none">Darrell K.</p>
-                <p className="text-xs text-muted-text leading-none mt-0.5">Online Coach</p>
+                <p className="text-xs text-muted-text leading-none mt-0.5">Ecom Coach</p>
               </div>
             </div>
           </div>
