@@ -31,4 +31,11 @@ export const workItems: WorkItem[] = [
     imageUrl: "/67ca1f098c502a5d6738399b_refined-berlin-case-study-preview-picture-website.png",
     displayUrl: "refined-berlin.de",
   },
+  {
+    id: "matthew",
+    clientName: "Matthew Przybysz",
+    niche: "AI Coach",
+    siteUrl: "https://realaisolutions.framer.ai",
+    displayUrl: "realaisolutions.com",
+  },
 ];
